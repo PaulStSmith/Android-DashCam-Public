@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DashCam App - Transform your Android phone into a professional dashboard camera">
+    <title>DashCam App - User Manual</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="images/app-icon-192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/app-icon-96.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="images/app-icon-48.png">
+    <link rel="apple-touch-icon" href="images/app-icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="images/app-icon-96.png" alt="DashCam App Icon" class="app-icon">
+                <div class="header-text">
+                    <h1>DashCam App — User Manual</h1>
+                    <p class="subtitle">Version 1.0.0 Beta | Android 8.0+ (API 26+) | Last Updated: October 2025</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#quick-start">Quick Start</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#recording-modes">Recording Modes</a></li>
+            <li><a href="#settings">Settings</a></li>
+            <li><a href="#storage">Storage</a></li>
+            <li><a href="#uploads">Uploads</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="quick-start">
+            <h2>Quick Start</h2>
+            <ol>
+                <li><strong>Install and Launch:</strong> Grant camera, microphone, and location permissions when prompted.</li>
+                <li><strong>Mount Your Phone:</strong> Securely mount on your windshield in landscape orientation, rear camera facing forward.</li>
+                <li><strong>Power It Up:</strong> Connect to a power source that turns on with your car's ignition (ACC). The app automatically starts recording when power is detected and stops when power is lost.</li>
+                <li><strong>Storage:</strong> Videos are saved internally by default. You can change to SD card or external storage in settings.</li>
+                <li><strong>Uploads (Optional):</strong> Configure uploads to your home computer, NAS, or cloud storage (Google Drive, OneDrive) via Wi-Fi.</li>
+            </ol>
+        </section>
+
+        <hr>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>DashCam transforms an old Android phone into a reliable, full-featured vehicle dash camera. Designed for <strong>stability, automation, and simplicity</strong>, it automatically records when your car starts and saves or uploads your footage when it stops.</p>
+
+            <h3>Main Features</h3>
+            <ul>
+                <li>Automatic recording linked to ignition or impact</li>
+                <li>Impact detection with circular video buffer</li>
+                <li>GPS, speed, and motion sensor data logging</li>
+                <li>Secure uploads to network shares (SMB/CIFS) or cloud (Google Drive, OneDrive)</li>
+                <li>Multiple output formats: MP4, SRT, CSV, GPX</li>
+                <li>Encrypted credential storage via Android Keystore</li>
+                <li>Hostname resolution via NetBIOS for Windows networks</li>
+                <li>Optimized for minimal user interaction — install once, drive daily</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+
+            <h3>Permissions</h3>
+            <p>Grant these permissions at first launch:</p>
+            <ul>
+                <li><strong>Camera</strong> – Required for video recording.</li>
+                <li><strong>Microphone</strong> – For audio capture.</li>
+                <li><strong>Location</strong> – For GPS and speed logging.</li>
+                <li><strong>Storage</strong> – (Android 9 and below) For saving recordings.</li>
+            </ul>
+
+            <h3>Mounting Your Phone</h3>
+            <ul>
+                <li>Use a <strong>windshield or dashboard mount</strong> with a stable forward view.</li>
+                <li>Keep cables neat and out of your line of sight.</li>
+                <li>Connect power from a charger wired to ignition (ACC) for automatic operation.</li>
+            </ul>
+
+            <h3>Power Behavior</h3>
+            <ul>
+                <li><strong>Ignition On (Power Connected):</strong> Recording starts automatically.</li>
+                <li><strong>Ignition Off (Power Lost):</strong> Recording stops safely and uploads begin (if configured). The phone remains awake to finish uploads, then sleeps to conserve power.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="main-screen">
+            <h2>Main Screen</h2>
+            <ul>
+                <li><strong>Top-Left:</strong> Date and time</li>
+                <li><strong>Bottom-Left:</strong> GPS coordinates and heading</li>
+                <li><strong>Bottom-Right:</strong> Speed (mph or km/h)</li>
+                <li><strong>Center:</strong> Camera preview and recording indicator</li>
+                <li><strong>Floating Button:</strong> Tap red to start, white to stop manual recording</li>
+            </ul>
+            <div class="alert alert-warning">
+                <p><strong>Note:</strong> If you see "EMULATOR – Video recording disabled," you're running in a virtual device. Use a real phone for recording.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="recording-modes">
+            <h2>Recording Modes</h2>
+
+            <h3>1. AUTO (Impact Detection)</h3>
+            <p>Records continuously in short loops, saving only the last two minutes. When an impact (1.5G–3.0G) is detected, DashCam preserves:</p>
+            <ul>
+                <li>Two minutes before impact</li>
+                <li>Ten seconds after</li>
+                <li>All telemetry (GPS + sensor logs)</li>
+            </ul>
+
+            <h3>2. PER_TRIP</h3>
+            <p>Starts when ignition turns on, stops when it turns off. Saves each trip as a single file with synchronized logs.</p>
+
+            <h3>3. Timed Loop (5/10/30 minutes)</h3>
+            <p>Splits recordings into smaller rotating files for easier upload and management.</p>
+
+            <h3>4. Manual</h3>
+            <p>Tap the red button to start or stop recording anytime.</p>
+        </section>
+
+        <hr>
+
+        <section id="settings">
+            <h2>Settings Overview</h2>
+
+            <h3>Display</h3>
+            <ul>
+                <li><strong>Speed Units:</strong> mph or km/h</li>
+                <li><strong>Video Quality:</strong> 720p, 1080p (default), 4K</li>
+                <li><strong>Date/Time Format:</strong> Regional customization</li>
+                <li><strong>Keep Screen On:</strong> Prevent timeout while recording</li>
+            </ul>
+
+            <h3>Recording</h3>
+            <ul>
+                <li><strong>Mode:</strong> AUTO, PER_TRIP, 5/10/30 min</li>
+                <li><strong>Impact Sensitivity:</strong> Low (3.0G), Medium (2.0G default), High (1.5G)</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="storage">
+            <h2>Storage Management</h2>
+
+            <h3>Default Location</h3>
+            <code>/Android/data/com.dashcam.app/files/DashCam/</code>
+
+            <h3>External or SD Card Storage</h3>
+            <ol>
+                <li>Go to <strong>Settings → Storage Settings</strong>.</li>
+                <li>Choose <strong>EXTERNAL</strong>.</li>
+                <li>Tap <strong>Select Custom Folder</strong> and pick your SD card or USB path.</li>
+            </ol>
+
+            <h3>File Sizes (Approximate)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quality</th>
+                        <th>MB/min</th>
+                        <th>Recommended Use</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>720p</td>
+                        <td>50</td>
+                        <td>Long drives, low storage</td>
+                    </tr>
+                    <tr>
+                        <td>1080p</td>
+                        <td>80</td>
+                        <td>Balanced quality (default)</td>
+                    </tr>
+                    <tr>
+                        <td>4K</td>
+                        <td>200</td>
+                        <td>High detail, large storage</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert alert-tip">
+                <p><strong>Tip:</strong> Telemetry logs (.srt, .csv, .gpx) remain under 0.2 MB/min combined.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="uploads">
+            <h2>Upload Configuration</h2>
+            <p>DashCam supports automatic uploads over Wi-Fi to <strong>SMB/CIFS shares</strong>, <strong>Google Drive</strong>, or <strong>OneDrive</strong>.</p>
+
+            <h3>SMB Configuration</h3>
+            <ol>
+                <li><strong>Enable Uploads</strong> in Settings.</li>
+                <li><strong>Set Upload Timing:</strong> Manual, During Recording, or After Recording.</li>
+                <li><strong>Network Policy:</strong> Wi-Fi only (default) or Allow Metered.</li>
+                <li><strong>Enter Server Details:</strong>
+                    <ul>
+                        <li><strong>Host:</strong> Windows hostname (NetBIOS) or IP address.</li>
+                        <li><strong>Share:</strong> Folder share name, e.g., <code>dashcam</code>.</li>
+                        <li><strong>Username / Password:</strong> Local Windows account credentials.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Hostname Resolution (Windows Networks)</h3>
+            <p>DashCam supports <strong>NetBIOS name resolution</strong>, allowing you to use Windows hostnames instead of IP addresses (e.g., <code>MYPC</code>). Ensure both devices are on the same Wi-Fi network and that <strong>Network Discovery</strong> is enabled in Windows.</p>
+            <blockquote>macOS or Linux users may still need to connect using the IP address.</blockquote>
+
+            <h3>Why You Need a Local Windows Account</h3>
+            <p>Windows 10+ no longer supports guest shares. Create a dedicated <strong>local user</strong> with password access:</p>
+            <ol>
+                <li><strong>Win + I → Accounts → Family & other users</strong>.</li>
+                <li>Select <strong>Add account → Add a user without a Microsoft account</strong>.</li>
+                <li>Create username (e.g., <code>dashcam_user</code>) and password.</li>
+                <li>Grant folder <strong>Read/Write</strong> permissions under both <strong>Sharing</strong> and <strong>Security</strong> tabs.</li>
+            </ol>
+            <div class="alert alert-tip">
+                <p><strong>Tip:</strong> Find your PC's IP via Command Prompt → <code>ipconfig</code> → IPv4 Address.</p>
+            </div>
+
+            <h3>Cloud Uploads</h3>
+            <p>DashCam can also upload directly to cloud storage.</p>
+            <ul>
+                <li><strong>Google Drive:</strong> Fully supported. Authorize your Google account once in settings.</li>
+                <li><strong>OneDrive:</strong> Fully supported. Sign in to your Microsoft account and select target folder.</li>
+                <li><strong>Dropbox:</strong> Planned for future versions if requested by users.</li>
+            </ul>
+            <p>Uploads retry automatically if interrupted, and you may choose to delete local files after successful transfer.</p>
+        </section>
+
+        <hr>
+
+        <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Possible Fix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>No video</td>
+                        <td>Grant camera permission; restart app.</td>
+                    </tr>
+                    <tr>
+                        <td>GPS stuck</td>
+                        <td>Move outdoors for signal; ensure GPS is on.</td>
+                    </tr>
+                    <tr>
+                        <td>Impact not detected</td>
+                        <td>Adjust sensitivity; secure mount.</td>
+                    </tr>
+                    <tr>
+                        <td>Upload fails</td>
+                        <td>Confirm credentials; ensure same Wi-Fi; enable SMB port 445.</td>
+                    </tr>
+                    <tr>
+                        <td>Hostname not found</td>
+                        <td>Verify NetBIOS discovery; fallback to IP.</td>
+                    </tr>
+                    <tr>
+                        <td>Storage full</td>
+                        <td>Lower video quality or enable auto-delete after upload.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Performance Tips</h3>
+            <ul>
+                <li>Disable Android battery optimization for DashCam.</li>
+                <li>Use a quality charger (2A+).</li>
+                <li>Avoid overheating — direct sunlight may trigger shutdown.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="technical">
+            <h2>Technical Notes</h2>
+            <ul>
+                <li><strong>Video:</strong> H.264/AVC MP4 @ 30 fps</li>
+                <li><strong>Telemetry:</strong> SRT (GPS/speed), CSV (10 Hz sensor data), GPX (map track)</li>
+                <li><strong>Impact Buffer:</strong> Two-minute rolling loop, saves +10s post-impact</li>
+                <li><strong>Permissions:</strong> CAMERA, RECORD_AUDIO, ACCESS_FINE_LOCATION, INTERNET, WAKE_LOCK, FOREGROUND_SERVICE</li>
+                <li><strong>Credential Storage:</strong> Encrypted via Android Keystore</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="limitations">
+            <h2>Known Limitations (Beta)</h2>
+            <ul>
+                <li>Dropbox integration pending user demand.</li>
+                <li>Extremely long continuous trips may require large storage capacity.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="safety">
+            <h2>Safety & Responsibility</h2>
+            <p>DashCam assists drivers — it is <strong>not</strong> a substitute for safe driving. Always follow local laws regarding in-car recording.</p>
+        </section>
+
+        <hr>
+
+        <section id="support">
+            <h2>Support & Feedback</h2>
+            <p>This is a <strong>beta release</strong> — stable for daily use, with active development continuing.</p>
+            <ul>
+                <li>Report issues or suggestions via the project's GitHub page.</li>
+                <li>Include your phone model, Android version, and a short problem description.</li>
+            </ul>
+            <p><strong>Thank you for using DashCam. Drive safe — and record responsibly.</strong></p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ByteForge. All rights reserved.</p>
+            <p>
+                <a href="index.html">User Manual</a> |
+                <a href="eula.html">Terms of Use</a> |
+                <a href="license.html">License</a> |
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
