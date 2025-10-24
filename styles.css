@@ -314,6 +314,11 @@ footer {
     padding: 1.5rem 1rem;
   }
 
+  header {
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+  }
+
   .header-content {
     flex-direction: column;
     text-align: center;
@@ -326,28 +331,125 @@ footer {
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    line-height: 1.4;
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
   }
 
   h3 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+  h4 {
+    font-size: 1.1rem;
   }
 
+  /* Hide navigation on mobile */
+  nav {
+    display: none;
+  }
+
+  /* Make tables scrollable on mobile */
   table {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   th, td {
-    padding: 0.75rem 0.5rem;
+    padding: 0.5rem 0.4rem;
+    min-width: 80px;
+  }
+
+  /* Adjust code blocks for mobile */
+  code {
+    font-size: 0.85em;
+    word-break: break-word;
+  }
+
+  pre {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  /* Better alert spacing on mobile */
+  .alert {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Improve list readability */
+  ul, ol {
+    padding-left: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.75rem;
+  }
+
+  /* Reduce footer spacing */
+  footer {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+  }
+
+  /* Make blockquotes more compact */
+  blockquote {
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small screens (phones < 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .app-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 0.4rem 0.3rem;
+    min-width: 70px;
   }
 }
 
