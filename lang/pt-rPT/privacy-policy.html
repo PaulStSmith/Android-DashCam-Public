@@ -23,14 +23,16 @@
             </div>
         </div>
     </header>
+
     <nav>
         <ul>
-            <li><a href="index.html">Manual do Utilizador</a></li>
+            <li><a href="manual.html">Manual do Utilizador</a></li>
             <li><a href="eula.html">Termos de Utilização</a></li>
             <li><a href="license.html">Licença</a></li>
             <li><a href="privacy-policy.html" class="active">Política de Privacidade</a></li>
         </ul>
     </nav>
+
     <div class="container">
         <section id="about">
             <h2>1. Sobre esta Política</h2>
@@ -40,13 +42,174 @@
                 <p><strong>O DashCam foi concebido com foco na privacidade.</strong> Não recolhe informações pessoais, não exibe anúncios nem envia dados analíticos para terceiros.</p>
             </div>
         </section>
-        <!-- ...existing code... -->
+
+        <hr>
+
+        <section id="data-collection">
+            <h2>2. Informações que Recolhemos e Armazenamos</h2>
+            <p>O DashCam apenas acede aos dados necessários para funcionar corretamente. Todos os dados são armazenados <strong>localmente no seu dispositivo</strong> ou num <strong>destino que escolher</strong>.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Dados</th>
+                        <th>Finalidade</th>
+                        <th>Onde São Armazenados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Câmara e Microfone</strong></td>
+                        <td>Para gravar vídeo e áudio durante a condução.</td>
+                        <td>Guardados como ficheiros MP4 no seu telemóvel ou cartão SD.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Localização (GPS)</strong></td>
+                        <td>Para gravar rota, velocidade e direção.</td>
+                        <td>Armazenado localmente em ficheiros .srt e .gpx.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sensores de Movimento</strong> (Acelerómetro, Giroscópio, Magnetómetro)</td>
+                        <td>Para detetar impactos e fornecer registos de telemetria.</td>
+                        <td>Guardados localmente em ficheiros .csv.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acesso à Rede</strong></td>
+                        <td>Usado apenas para uploads que configurar (SMB/CIFS, Google Drive ou OneDrive).</td>
+                        <td>Enviado diretamente para o seu servidor selecionado; nunca armazenado ou transmitido para outro local.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>O DashCam NÃO:</h3>
+            <ul>
+                <li>Envia gravações ou registos para qualquer servidor da ByteForge.</li>
+                <li>Inclui publicidade, análises ou ferramentas de rastreamento.</li>
+                <li>Recolhe nomes, endereços de email ou quaisquer outros identificadores pessoais.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="data-use">
+            <h2>3. Como São Usados os Seus Dados</h2>
+            <p>Os seus dados existem exclusivamente para fazer o DashCam funcionar:</p>
+            <ul>
+                <li>Os ficheiros de <strong>vídeo, áudio e telemetria</strong> são gravados para o seu próprio uso (provas, histórico de viagens ou registos pessoais).</li>
+                <li>Os <strong>uploads</strong>, se ativados, são enviados apenas para a partilha de rede ou conta na nuvem que configurar.</li>
+                <li>O DashCam nunca visualiza, analisa ou partilha os seus dados com mais ninguém.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="data-sharing">
+            <h2>4. Partilha de Dados</h2>
+            <p>O DashCam não partilha os seus dados com a ByteForge ou qualquer terceiro.</p>
+            <p>Se optar por enviar ficheiros, estes são transferidos diretamente para o seu servidor ou conta na nuvem configurados usando as suas próprias credenciais.</p>
+        </section>
+
+        <hr>
+
+        <section id="security">
+            <h2>5. Segurança</h2>
+            <ul>
+                <li>Todas as credenciais sensíveis (como nomes de utilizador e palavras-passe SMB) são encriptadas e armazenadas de forma segura usando o <a href="https://developer.android.com/privacy-and-security/keystore" target="_blank" rel="noopener noreferrer">Android Keystore</a>.</li>
+                <li>O DashCam nunca armazena ou transmite estas informações para fora do seu dispositivo.</li>
+                <li>Os ficheiros são acessíveis apenas através do gestor de ficheiros do seu dispositivo ou da partilha de rede que definir.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="retention">
+            <h2>6. Retenção e Eliminação de Dados</h2>
+            <ul>
+                <li>Todas as gravações permanecem no seu dispositivo até as eliminar ou ativar a <strong>eliminação automática após upload</strong>.</li>
+                <li>Desinstalar o DashCam remove os seus ficheiros de armazenamento interno, mas não os que guardou noutro local.</li>
+                <li>Pode eliminar qualquer ficheiro a qualquer momento usando o gestor de ficheiros do seu dispositivo ou a interface da nuvem.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="children">
+            <h2>7. Privacidade de Crianças</h2>
+            <p>O DashCam não se destina a crianças com menos de 13 anos.<br>
+            Não recolhemos nem armazenamos intencionalmente informações de menores.</p>
+        </section>
+
+        <hr>
+
+        <section id="permissions">
+            <h2>8. Permissões Explicadas</h2>
+            <p>O DashCam usa estas permissões Android apenas para os seus propósitos técnicos:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Permissão</th>
+                        <th>Finalidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>CAMERA</code></td>
+                        <td>Gravar imagens de vídeo</td>
+                    </tr>
+                    <tr>
+                        <td><code>RECORD_AUDIO</code></td>
+                        <td>Capturar áudio no interior do veículo</td>
+                    </tr>
+                    <tr>
+                        <td><code>ACCESS_FINE_LOCATION</code></td>
+                        <td>Gravar localização GPS e velocidade</td>
+                    </tr>
+                    <tr>
+                        <td><code>INTERNET</code></td>
+                        <td>Enviar para partilhas de rede ou armazenamento na nuvem</td>
+                    </tr>
+                    <tr>
+                        <td><code>WAKE_LOCK</code></td>
+                        <td>Manter o telemóvel ativo durante a gravação e upload</td>
+                    </tr>
+                    <tr>
+                        <td><code>FOREGROUND_SERVICE</code></td>
+                        <td>Manter a operação estável enquanto a app corre em segundo plano</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="updates">
+            <h2>9. Atualizações a esta Política</h2>
+            <p>Esta Política de Privacidade pode mudar se as funcionalidades do DashCam evoluírem.<br>
+            Quando ocorrerem atualizações, a versão revista e a data serão publicadas dentro da app e na nossa página de lançamento oficial.</p>
+        </section>
+
+        <hr>
+
+        <section id="contact">
+            <h2>10. Contacto</h2>
+            <p>Se tiver questões sobre privacidade ou tratamento de dados, contacte:<br>
+            📧 <a href="mailto:support@byteforge.biz">support@byteforge.biz</a></p>
+        </section>
+
+        <hr>
+
+        <div class="alert alert-info">
+            <p><strong>A ByteForge valoriza a transparência e a confiança dos utilizadores.</strong><br>
+            Acreditamos que as suas gravações pertencem a <strong>si</strong> — e a mais ninguém.</p>
+        </div>
     </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 ByteForge. Todos os direitos reservados.</p>
             <p>
-                <a href="index.html">Manual do Utilizador</a> |
+                <a href="manual.html">Manual do Utilizador</a> |
                 <a href="eula.html">Termos de Utilização</a> |
                 <a href="license.html">Licença</a> |
                 <a href="privacy-policy.html">Política de Privacidade</a>

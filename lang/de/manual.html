@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DashCam App - Verwandeln Sie Ihr Android-Gerät in eine professionelle Dashcam">
+    <title>DashCam App - Benutzerhandbuch</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="../../images/app-icon-192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../images/app-icon-96.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../../images/app-icon-48.png">
+    <link rel="apple-touch-icon" href="../../images/app-icon-192.png">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="../../images/app-icon-96.png" alt="DashCam App Icon" class="app-icon">
+                <div class="header-text">
+                    <h1>DashCam App — Benutzerhandbuch</h1>
+                    <p class="subtitle">Version 1.0.0 Beta | Android 8.0+ (API 26+) | Letzte Aktualisierung: Oktober 2025</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="manual.html"  class="active">Benutzerhandbuch</a></li>
+            <li><a href="eula.html">Nutzungsbedingungen</a></li>
+            <li><a href="license.html">Lizenz</a></li>
+            <li><a href="privacy-policy.html">Datenschutzrichtlinie</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="quick-start">
+            <h2>Schnellstart</h2>
+            <ol>
+                <li><strong>Installieren und Starten:</strong> Erteilen Sie Kamera-, Mikrofon- und Standortberechtigungen, wenn Sie dazu aufgefordert werden.</li>
+                <li><strong>Gerät montieren:</strong> Befestigen Sie Ihr Gerät sicher an der Windschutzscheibe im Querformat, die Rückkamera zeigt nach vorne.</li>
+                <li><strong>Strom anschließen:</strong> Verbinden Sie das Gerät mit einer Stromquelle, die mit der Zündung des Autos eingeschaltet wird (ACC). Die App startet die Aufnahme automatisch, wenn Strom erkannt wird, und stoppt, wenn die Stromversorgung unterbrochen wird.</li>
+                <li><strong>Speicherung:</strong> Videos werden standardmäßig intern gespeichert. Sie können in den Einstellungen auf SD-Karte oder externen Speicher umstellen.</li>
+                <li><strong>Uploads (optional):</strong> Konfigurieren Sie Uploads auf Ihren Computer, NAS oder Cloud (Google Drive, OneDrive) über WLAN.</li>
+            </ol>
+        </section>
+
+        <hr>
+
+        <section id="introduction">
+            <h2>Einführung</h2>
+            <p>DashCam verwandelt ein altes Android-Gerät in eine zuverlässige, voll funktionsfähige Dashcam. Konzipiert für <strong>Stabilität, Automatisierung und Einfachheit</strong>, zeichnet sie automatisch auf, wenn Ihr Auto startet, und speichert oder lädt Ihre Aufnahmen hoch, wenn es stoppt.</p>
+
+            <h3>Hauptfunktionen</h3>
+            <ul>
+                <li>Automatische Aufnahme gekoppelt an die Zündung oder Aufprall</li>
+                <li>Aufprallerkennung mit zirkulärem Videopuffer</li>
+                <li>GPS-, Geschwindigkeits- und Bewegungssensor-Datenprotokollierung</li>
+                <li>Sichere Uploads auf Netzwerkfreigaben (SMB/CIFS) oder Cloud (Google Drive, OneDrive)</li>
+                <li>Mehrere Ausgabeformate: MP4, SRT, CSV, GPX</li>
+                <li>Verschlüsselte Anmeldedatenspeicherung über Android Keystore</li>
+                <li>Hostname-Auflösung über NetBIOS für Windows-Netzwerke</li>
+                <li>Optimiert für minimale Benutzerinteraktion — einmal installieren, täglich fahren</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="getting-started">
+            <h2>Erste Schritte</h2>
+
+            <h3>Berechtigungen</h3>
+            <p>Erteilen Sie diese Berechtigungen beim ersten Start:</p>
+            <ul>
+                <li><strong>Kamera</strong> – Erforderlich für Videoaufnahmen.</li>
+                <li><strong>Mikrofon</strong> – Für Audioaufnahmen.</li>
+                <li><strong>Standort</strong> – Für GPS- und Geschwindigkeitsprotokollierung.</li>
+                <li><strong>Speicher</strong> – (Android 9 und älter) Zum Speichern von Aufnahmen.</li>
+            </ul>
+
+            <h3>Ihr Gerät montieren</h3>
+            <ul>
+                <li>Verwenden Sie eine <strong>Windschutzscheiben- oder Armaturenbrett-Halterung</strong> mit stabiler Vorwärtssicht.</li>
+                <li>Halten Sie Kabel ordentlich und außerhalb Ihrer Sichtlinie.</li>
+                <li>Schließen Sie den Strom von einem Ladegerät an, das mit der Zündung (ACC) verbunden ist, für automatischen Betrieb.</li>
+            </ul>
+
+            <h3>Stromverhalten</h3>
+            <ul>
+                <li><strong>Zündung Ein (Strom angeschlossen):</strong> Die Aufnahme startet automatisch.</li>
+                <li><strong>Zündung Aus (Strom getrennt):</strong> Die Aufnahme stoppt sicher und Uploads beginnen (falls konfiguriert). Das Telefon bleibt wach, um Uploads abzuschließen, dann geht es in den Ruhemodus, um Strom zu sparen.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="main-screen">
+            <h2>Hauptbildschirm</h2>
+            <ul>
+                <li><strong>Oben links:</strong> Datum und Uhrzeit</li>
+                <li><strong>Unten links:</strong> GPS-Koordinaten und Richtung</li>
+                <li><strong>Unten rechts:</strong> Geschwindigkeit (mph oder km/h)</li>
+                <li><strong>Mitte:</strong> Kameravorschau und Aufnahmeanzeige</li>
+                <li><strong>Schwebende Taste:</strong> Tippen Sie auf Rot zum Starten, Weiß zum Stoppen der manuellen Aufnahme</li>
+            </ul>
+            <div class="alert alert-warning">
+                <p><strong>Hinweis:</strong> Wenn Sie "EMULATOR – Videoaufnahme deaktiviert" sehen, läuft die App in einem virtuellen Gerät. Verwenden Sie ein echtes Telefon für Aufnahmen.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="recording-modes">
+            <h2>Aufnahmemodi</h2>
+
+            <h3>1. AUTO (Aufprallerkennung)</h3>
+            <p>Nimmt kontinuierlich in kurzen Schleifen auf und speichert nur die letzten zwei Minuten. Wenn ein Aufprall (1,5G–3,0G) erkannt wird, bewahrt DashCam:</p>
+            <ul>
+                <li>Zwei Minuten vor dem Aufprall</li>
+                <li>Zehn Sekunden danach</li>
+                <li>Alle Telemetriedaten (GPS + Sensorprotokolle)</li>
+            </ul>
+
+            <h3>2. PER_TRIP</h3>
+            <p>Startet, wenn die Zündung eingeschaltet wird, stoppt, wenn sie ausgeschaltet wird. Speichert jede Fahrt als einzelne Datei mit synchronisierten Protokollen.</p>
+
+            <h3>3. Zeitschleife (5/10/30 Minuten)</h3>
+            <p>Teilt Aufnahmen in kleinere rotierende Dateien für einfacheren Upload und Verwaltung.</p>
+
+            <h3>4. Manuell</h3>
+            <p>Tippen Sie jederzeit auf die rote Taste, um die Aufnahme zu starten oder zu stoppen.</p>
+        </section>
+
+        <hr>
+
+        <section id="settings">
+            <h2>Einstellungen im Überblick</h2>
+
+            <h3>Anzeige</h3>
+            <ul>
+                <li><strong>Geschwindigkeitseinheiten:</strong> mph oder km/h</li>
+                <li><strong>Videoqualität:</strong> 720p, 1080p (Standard), 4K</li>
+                <li><strong>Datums-/Zeitformat:</strong> Regionale Anpassung</li>
+                <li><strong>Bildschirm aktiviert lassen:</strong> Timeout während der Aufnahme verhindern</li>
+            </ul>
+
+            <h3>Aufnahme</h3>
+            <ul>
+                <li><strong>Modus:</strong> AUTO, PER_TRIP, 5/10/30 min</li>
+                <li><strong>Aufprallempfindlichkeit:</strong> Niedrig (3,0G), Mittel (2,0G Standard), Hoch (1,5G)</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="storage">
+            <h2>Speicherverwaltung</h2>
+
+            <h3>Standardspeicherort</h3>
+            <code>/Android/data/com.dashcam.app/files/DashCam/</code>
+
+            <h3>Externer Speicher oder SD-Karte</h3>
+            <ol>
+                <li>Gehen Sie zu <strong>Einstellungen → Speichereinstellungen</strong>.</li>
+                <li>Wählen Sie <strong>EXTERN</strong>.</li>
+                <li>Tippen Sie auf <strong>Benutzerdefinierten Ordner auswählen</strong> und wählen Sie Ihre SD-Karte oder USB-Pfad.</li>
+            </ol>
+
+            <h3>Dateigrößen (Ungefähr)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Qualität</th>
+                        <th>MB/min</th>
+                        <th>Empfohlene Verwendung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>720p</td>
+                        <td>50</td>
+                        <td>Lange Fahrten, wenig Speicher</td>
+                    </tr>
+                    <tr>
+                        <td>1080p</td>
+                        <td>80</td>
+                        <td>Ausgewogene Qualität (Standard)</td>
+                    </tr>
+                    <tr>
+                        <td>4K</td>
+                        <td>200</td>
+                        <td>Hohe Detailgenauigkeit, großer Speicher</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert alert-tip">
+                <p><strong>Tipp:</strong> Telemetrieprotokolle (.srt, .csv, .gpx) bleiben kombiniert unter 0,2 MB/min.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="uploads">
+            <h2>Upload-Konfiguration</h2>
+            <p>DashCam unterstützt automatische Uploads über WLAN auf <strong>SMB/CIFS-Freigaben</strong>, <strong>Google Drive</strong> oder <strong>OneDrive</strong>.</p>
+
+            <h3>SMB-Konfiguration</h3>
+            <ol>
+                <li><strong>Uploads aktivieren</strong> in den Einstellungen.</li>
+                <li><strong>Upload-Zeitpunkt festlegen:</strong> Manuell, Während der Aufnahme oder Nach der Aufnahme.</li>
+                <li><strong>Netzwerkrichtlinie:</strong> Nur WLAN (Standard) oder Mobilfunk erlauben.</li>
+                <li><strong>Serverdetails eingeben:</strong>
+                    <ul>
+                        <li><strong>Host:</strong> Windows-Hostname (NetBIOS) oder IP-Adresse.</li>
+                        <li><strong>Freigabe:</strong> Name der Ordnerfreigabe, z.B. <code>dashcam</code>.</li>
+                        <li><strong>Benutzername / Passwort:</strong> Anmeldedaten des lokalen Windows-Kontos.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Hostname-Auflösung (Windows-Netzwerke)</h3>
+            <p>DashCam unterstützt <strong>NetBIOS-Namensauflösung</strong>, sodass Sie Windows-Hostnamen anstelle von IP-Adressen verwenden können (z.B. <code>MYPC</code>). Stellen Sie sicher, dass beide Geräte im selben WLAN-Netzwerk sind und dass <strong>Netzwerkerkennung</strong> in Windows aktiviert ist.</p>
+            <blockquote>macOS- oder Linux-Benutzer müssen möglicherweise weiterhin die IP-Adresse verwenden.</blockquote>
+
+            <h3>Warum Sie ein lokales Windows-Konto benötigen</h3>
+            <p>Windows 10+ unterstützt keine Gastfreigaben mehr. Erstellen Sie einen dedizierten <strong>lokalen Benutzer</strong> mit Passwort-Zugriff:</p>
+            <ol>
+                <li><strong>Win + I → Konten → Familie und weitere Benutzer</strong>.</li>
+                <li>Wählen Sie <strong>Konto hinzufügen → Benutzer ohne Microsoft-Konto hinzufügen</strong>.</li>
+                <li>Erstellen Sie einen Benutzernamen (z.B. <code>dashcam_user</code>) und ein Passwort.</li>
+                <li>Erteilen Sie Ordner <strong>Lese-/Schreibberechtigungen</strong> sowohl unter den Registerkarten <strong>Freigabe</strong> als auch <strong>Sicherheit</strong>.</li>
+            </ol>
+            <div class="alert alert-tip">
+                <p><strong>Tipp:</strong> Finden Sie die IP Ihres PCs über Eingabeaufforderung → <code>ipconfig</code> → IPv4-Adresse.</p>
+            </div>
+
+            <h3>Cloud-Uploads</h3>
+            <p>DashCam kann auch direkt auf Cloud-Speicher hochladen.</p>
+            <ul>
+                <li><strong>Google Drive:</strong> Vollständig unterstützt. Autorisieren Sie Ihr Google-Konto einmal in den Einstellungen.</li>
+                <li><strong>OneDrive:</strong> Vollständig unterstützt. Melden Sie sich bei Ihrem Microsoft-Konto an und wählen Sie den Zielordner.</li>
+                <li><strong>Dropbox:</strong> Geplant für zukünftige Versionen, falls von Benutzern gewünscht.</li>
+            </ul>
+            <p>Uploads werden bei Unterbrechung automatisch wiederholt, und Sie können wählen, lokale Dateien nach erfolgreichem Transfer zu löschen.</p>
+        </section>
+
+        <hr>
+
+        <section id="troubleshooting">
+            <h2>Fehlerbehebung</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Problem</th>
+                        <th>Mögliche Lösung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kein Video</td>
+                        <td>Kameraberechtigung erteilen; App neu starten.</td>
+                    </tr>
+                    <tr>
+                        <td>GPS hängt</td>
+                        <td>Nach draußen für Signal; sicherstellen, dass GPS aktiviert ist.</td>
+                    </tr>
+                    <tr>
+                        <td>Aufprall nicht erkannt</td>
+                        <td>Empfindlichkeit anpassen; Halterung sichern.</td>
+                    </tr>
+                    <tr>
+                        <td>Upload schlägt fehl</td>
+                        <td>Anmeldedaten bestätigen; gleiches WLAN sicherstellen; SMB-Port 445 aktivieren.</td>
+                    </tr>
+                    <tr>
+                        <td>Hostname nicht gefunden</td>
+                        <td>NetBIOS-Erkennung überprüfen; auf IP zurückgreifen.</td>
+                    </tr>
+                    <tr>
+                        <td>Speicher voll</td>
+                        <td>Videoqualität verringern oder automatisches Löschen nach Upload aktivieren.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Leistungstipps</h3>
+            <ul>
+                <li>Deaktivieren Sie die Android-Akkuoptimierung für DashCam.</li>
+                <li>Verwenden Sie ein hochwertiges Ladegerät (2A+).</li>
+                <li>Vermeiden Sie Überhitzung — direktes Sonnenlicht kann zum Abschalten führen.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="technical">
+            <h2>Technische Hinweise</h2>
+            <ul>
+                <li><strong>Video:</strong> H.264/AVC MP4 @ 30 fps</li>
+                <li><strong>Telemetrie:</strong> SRT (GPS/Geschwindigkeit), CSV (10 Hz Sensordaten), GPX (Kartenspur)</li>
+                <li><strong>Aufprallpuffer:</strong> Zwei-Minuten-Endlosschleife, speichert +10s nach Aufprall</li>
+                <li><strong>Berechtigungen:</strong> CAMERA, RECORD_AUDIO, ACCESS_FINE_LOCATION, INTERNET, WAKE_LOCK, FOREGROUND_SERVICE</li>
+                <li><strong>Anmeldedatenspeicherung:</strong> Verschlüsselt über Android Keystore</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="limitations">
+            <h2>Bekannte Einschränkungen (Beta)</h2>
+            <ul>
+                <li>Dropbox-Integration ausstehend bei Benutzernachfrage.</li>
+                <li>Extrem lange kontinuierliche Fahrten können große Speicherkapazität erfordern.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="safety">
+            <h2>Sicherheit & Verantwortung</h2>
+            <p>DashCam unterstützt Fahrer — es ist <strong>kein</strong> Ersatz für sicheres Fahren. Beachten Sie immer lokale Gesetze bezüglich Aufnahmen im Auto.</p>
+        </section>
+
+        <hr>
+
+        <section id="support">
+            <h2>Support & Feedback</h2>
+            <p>Dies ist eine <strong>Beta-Version</strong> — stabil für den täglichen Gebrauch, mit aktiver fortlaufender Entwicklung.</p>
+            <ul>
+                <li>Melden Sie Probleme oder Vorschläge über die GitHub-Seite des Projekts.</li>
+                <li>Geben Sie Ihr Telefonmodell, Android-Version und eine kurze Problembeschreibung an.</li>
+            </ul>
+            <p><strong>Vielen Dank, dass Sie DashCam verwenden. Fahren Sie sicher — und nehmen Sie verantwortungsvoll auf.</strong></p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ByteForge. Alle Rechte vorbehalten.</p>
+            <p>
+                <a href="manual.html">Benutzerhandbuch</a> |
+                <a href="eula.html">Nutzungsbedingungen</a> |
+                <a href="license.html">Lizenz</a> |
+                <a href="privacy-policy.html">Datenschutzrichtlinie</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

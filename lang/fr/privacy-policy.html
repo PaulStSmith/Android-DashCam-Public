@@ -23,14 +23,16 @@
             </div>
         </div>
     </header>
+
     <nav>
         <ul>
-            <li><a href="index.html">Manuel d'Utilisateur</a></li>
+            <li><a href="manual.html">Manuel d'Utilisateur</a></li>
             <li><a href="eula.html">Conditions d'Utilisation</a></li>
             <li><a href="license.html">Licence</a></li>
             <li><a href="privacy-policy.html" class="active">Politique de Confidentialité</a></li>
         </ul>
     </nav>
+
     <div class="container">
         <section id="about">
             <h2>1. À propos de cette politique</h2>
@@ -40,13 +42,174 @@
                 <p><strong>DashCam est conçu dans le respect de la vie privée.</strong> Il ne collecte pas d'informations personnelles, n'affiche pas de publicités et n'envoie pas de données analytiques à des tiers.</p>
             </div>
         </section>
-        <!-- ...existing code... -->
+
+        <hr>
+
+        <section id="data-collection">
+            <h2>2. Informations que nous collectons et stockons</h2>
+            <p>DashCam n'accède qu'aux données nécessaires à son bon fonctionnement. Toutes les données sont stockées <strong>localement sur votre appareil</strong> ou sur une <strong>destination que vous choisissez</strong>.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type de données</th>
+                        <th>Objectif</th>
+                        <th>Où elles sont stockées</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Caméra et Microphone</strong></td>
+                        <td>Pour enregistrer la vidéo et l'audio pendant la conduite.</td>
+                        <td>Enregistré sous forme de fichiers MP4 sur votre téléphone ou carte SD.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Localisation (GPS)</strong></td>
+                        <td>Pour enregistrer l'itinéraire, la vitesse et la direction.</td>
+                        <td>Stocké localement dans les fichiers .srt et .gpx.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Capteurs de mouvement</strong> (Accéléromètre, Gyroscope, Magnétomètre)</td>
+                        <td>Pour détecter les impacts et fournir des journaux de télémétrie.</td>
+                        <td>Enregistré localement dans les fichiers .csv.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Accès réseau</strong></td>
+                        <td>Utilisé uniquement pour les téléversements que vous configurez (SMB/CIFS, Google Drive ou OneDrive).</td>
+                        <td>Envoyé directement à votre serveur sélectionné ; jamais stocké ou transmis ailleurs.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>DashCam ne fait PAS :</h3>
+            <ul>
+                <li>Envoyer des enregistrements ou des journaux à un serveur ByteForge.</li>
+                <li>Inclure de la publicité, des analyses ou des outils de suivi.</li>
+                <li>Collecter des noms, des adresses e-mail ou d'autres identifiants personnels.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="data-use">
+            <h2>3. Comment vos données sont utilisées</h2>
+            <p>Vos données existent uniquement pour faire fonctionner DashCam :</p>
+            <ul>
+                <li>Les fichiers de <strong>vidéo, audio et télémétrie</strong> sont enregistrés pour votre propre usage (preuve, historique de voyage ou journaux personnels).</li>
+                <li>Les <strong>téléversements</strong>, s'ils sont activés, sont envoyés uniquement vers le partage réseau ou le compte cloud que vous configurez.</li>
+                <li>DashCam ne consulte, n'analyse ni ne partage jamais vos données avec qui que ce soit d'autre.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="data-sharing">
+            <h2>4. Partage de données</h2>
+            <p>DashCam ne partage pas vos données avec ByteForge ou un tiers.</p>
+            <p>Si vous choisissez de téléverser des fichiers, ils sont transférés directement vers votre serveur ou compte cloud configuré en utilisant vos propres identifiants.</p>
+        </section>
+
+        <hr>
+
+        <section id="security">
+            <h2>5. Sécurité</h2>
+            <ul>
+                <li>Tous les identifiants sensibles (tels que les noms d'utilisateur et mots de passe SMB) sont chiffrés et stockés en toute sécurité en utilisant le <a href="https://developer.android.com/privacy-and-security/keystore" target="_blank" rel="noopener noreferrer">Android Keystore</a>.</li>
+                <li>DashCam ne stocke ni ne transmet jamais ces informations en dehors de votre appareil.</li>
+                <li>Les fichiers sont accessibles uniquement via le gestionnaire de fichiers de votre appareil ou le partage réseau que vous définissez.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="retention">
+            <h2>6. Conservation et suppression des données</h2>
+            <ul>
+                <li>Tous les enregistrements restent sur votre appareil jusqu'à ce que vous les supprimiez ou que vous activiez la <strong>suppression automatique après téléversement</strong>.</li>
+                <li>La désinstallation de DashCam supprime ses fichiers de stockage interne mais pas ceux que vous avez enregistrés ailleurs.</li>
+                <li>Vous pouvez supprimer n'importe quel fichier à tout moment en utilisant le gestionnaire de fichiers de votre appareil ou l'interface cloud.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="children">
+            <h2>7. Confidentialité des enfants</h2>
+            <p>DashCam n'est pas destiné aux enfants de moins de 13 ans.<br>
+            Nous ne collectons ni ne stockons sciemment d'informations provenant de mineurs.</p>
+        </section>
+
+        <hr>
+
+        <section id="permissions">
+            <h2>8. Autorisations expliquées</h2>
+            <p>DashCam utilise ces autorisations Android uniquement à des fins techniques :</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Autorisation</th>
+                        <th>Objectif</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>CAMERA</code></td>
+                        <td>Enregistrer des séquences vidéo</td>
+                    </tr>
+                    <tr>
+                        <td><code>RECORD_AUDIO</code></td>
+                        <td>Capturer l'audio de l'habitacle</td>
+                    </tr>
+                    <tr>
+                        <td><code>ACCESS_FINE_LOCATION</code></td>
+                        <td>Enregistrer la localisation GPS et la vitesse</td>
+                    </tr>
+                    <tr>
+                        <td><code>INTERNET</code></td>
+                        <td>Téléverser vers des partages réseau ou du stockage cloud</td>
+                    </tr>
+                    <tr>
+                        <td><code>WAKE_LOCK</code></td>
+                        <td>Maintenir le téléphone éveillé pendant l'enregistrement et le téléversement</td>
+                    </tr>
+                    <tr>
+                        <td><code>FOREGROUND_SERVICE</code></td>
+                        <td>Maintenir un fonctionnement stable pendant que l'application s'exécute en arrière-plan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="updates">
+            <h2>9. Mises à jour de cette politique</h2>
+            <p>Cette Politique de Confidentialité peut changer si les fonctionnalités de DashCam évoluent.<br>
+            Lorsque des mises à jour se produisent, la version révisée et la date seront publiées dans l'application et sur notre page de publication officielle.</p>
+        </section>
+
+        <hr>
+
+        <section id="contact">
+            <h2>10. Contact</h2>
+            <p>Si vous avez des questions concernant la confidentialité ou le traitement des données, contactez-nous à :<br>
+            📧 <a href="mailto:support@byteforge.biz">support@byteforge.biz</a></p>
+        </section>
+
+        <hr>
+
+        <div class="alert alert-info">
+            <p><strong>ByteForge valorise la transparence et la confiance des utilisateurs.</strong><br>
+            Nous croyons que vos enregistrements vous appartiennent — <strong>à vous</strong> et à personne d'autre.</p>
+        </div>
     </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 ByteForge. Tous droits réservés.</p>
             <p>
-                <a href="index.html">Manuel d'Utilisateur</a> |
+                <a href="manual.html">Manuel d'Utilisateur</a> |
                 <a href="eula.html">Conditions d'Utilisation</a> |
                 <a href="license.html">Licence</a> |
                 <a href="privacy-policy.html">Politique de Confidentialité</a>

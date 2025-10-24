@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DashCamアプリ - Androidをプロ仕様のドライブレコーダーに変身">
+    <title>DashCamアプリ - ユーザーマニュアル</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="../../images/app-icon-192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../images/app-icon-96.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../../images/app-icon-48.png">
+    <link rel="apple-touch-icon" href="../../images/app-icon-192.png">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="../../images/app-icon-96.png" alt="DashCamアプリアイコン" class="app-icon">
+                <div class="header-text">
+                    <h1>DashCamアプリ — ユーザーマニュアル</h1>
+                    <p class="subtitle">バージョン 1.0.0 Beta | Android 8.0+ (API 26+) | 最終更新: 2025年10月</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="manual.html"  class="active">ユーザーマニュアル</a></li>
+            <li><a href="eula.html">利用規約</a></li>
+            <li><a href="license.html">ライセンス</a></li>
+            <li><a href="privacy-policy.html">プライバシーポリシー</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="quick-start">
+            <h2>クイックスタート</h2>
+            <ol>
+                <li><strong>インストールと起動:</strong> カメラ、マイク、位置情報の権限を求められたら許可してください。</li>
+                <li><strong>スマホの設置:</strong> 横向きでリアカメラが前方を向くように、しっかりとフロントガラスに固定します。</li>
+                <li><strong>電源接続:</strong> 車のイグニッション（ACC）と連動する電源に接続します。電源が検出されると自動で録画開始、電源が切れると録画停止します。</li>
+                <li><strong>保存:</strong> 動画はデフォルトで内部ストレージに保存されます。設定でSDカードや外部ストレージに変更可能です。</li>
+                <li><strong>アップロード（任意）:</strong> Wi-Fi経由で自宅のPC、NAS、またはクラウド（Google Drive、OneDrive）にアップロード設定が可能です。</li>
+            </ol>
+        </section>
+
+        <hr>
+
+        <section id="introduction">
+            <h2>はじめに</h2>
+            <p>DashCamは、古いAndroid端末を信頼性の高い多機能なドライブレコーダーに変身させます。<strong>安定性、自動化、シンプルさ</strong>を重視して設計されており、車のエンジンがかかると自動的に録画を開始し、エンジンが止まると保存またはアップロードを行います。</p>
+
+            <h3>主な機能</h3>
+            <ul>
+                <li>イグニッションまたは衝撃に連動した自動録画</li>
+                <li>サーキュラービデオバッファ付き衝撃検出</li>
+                <li>GPS、速度、モーションセンサーデータのログ記録</li>
+                <li>ネットワーク共有（SMB/CIFS）またはクラウド（Google Drive、OneDrive）への安全なアップロード</li>
+                <li>複数の出力フォーマット: MP4、SRT、CSV、GPX</li>
+                <li>Android Keystoreによる暗号化された認証情報保存</li>
+                <li>WindowsネットワークのNetBIOS経由のホスト名解決</li>
+                <li>最小限のユーザー操作で最適化 — 一度インストールすれば、毎日使用可能</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="getting-started">
+            <h2>はじめ方</h2>
+
+            <h3>権限</h3>
+            <p>初回起動時に以下の権限を許可してください:</p>
+            <ul>
+                <li><strong>カメラ</strong> – 動画録画に必要です。</li>
+                <li><strong>マイク</strong> – 音声キャプチャに必要です。</li>
+                <li><strong>位置情報</strong> – GPSおよび速度のログ記録に必要です。</li>
+                <li><strong>ストレージ</strong> – （Android 9以下）録画の保存に必要です。</li>
+            </ul>
+
+            <h3>スマホの設置</h3>
+            <ul>
+                <li><strong>フロントガラスまたはダッシュボードマウント</strong>を使用して、前方を安定して見渡せるように設置してください。</li>
+                <li>ケーブルを整理し、視界を妨げないようにしてください。</li>
+                <li>自動動作のため、イグニッション（ACC）に連動した充電器から電源を接続してください。</li>
+            </ul>
+
+            <h3>電源動作</h3>
+            <ul>
+                <li><strong>イグニッションオン（電源接続）:</strong> 録画が自動的に開始されます。</li>
+                <li><strong>イグニッションオフ（電源切断）:</strong> 録画が安全に停止し、（設定されている場合）アップロードが開始されます。端末はアップロードを完了するまで起動状態を保ち、その後スリープして電力を節約します。</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="main-screen">
+            <h2>メイン画面</h2>
+            <ul>
+                <li><strong>左上:</strong> 日時</li>
+                <li><strong>左下:</strong> GPS座標と方角</li>
+                <li><strong>右下:</strong> 速度（mphまたはkm/h）</li>
+                <li><strong>中央:</strong> カメラプレビューと録画インジケーター</li>
+                <li><strong>フローティングボタン:</strong> 赤をタップして手動録画開始、白をタップして停止</li>
+            </ul>
+            <div class="alert alert-warning">
+                <p><strong>注意:</strong> 「エミュレーター – 動画録画無効」と表示される場合、仮想デバイスで実行しています。録画には実機を使用してください。</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="recording-modes">
+            <h2>録画モード</h2>
+
+            <h3>1. AUTO（衝撃検出）</h3>
+            <p>短いループで連続録画し、直近の2分間のみを保存します。衝撃（1.5G～3.0G）が検出されると、DashCamは以下を保存します:</p>
+            <ul>
+                <li>衝撃前2分間</li>
+                <li>衝撃後10秒間</li>
+                <li>すべてのテレメトリー（GPS + センサーログ）</li>
+            </ul>
+
+            <h3>2. PER_TRIP</h3>
+            <p>イグニッションがオンになると開始し、オフになると停止します。各トリップを単一のファイルとして同期ログとともに保存します。</p>
+
+            <h3>3. タイムドループ（5/10/30分）</h3>
+            <p>録画を小さなローテーションファイルに分割し、アップロードと管理を容易にします。</p>
+
+            <h3>4. 手動</h3>
+            <p>赤いボタンをタップすると、いつでも録画を開始または停止できます。</p>
+        </section>
+
+        <hr>
+
+        <section id="settings">
+            <h2>設定の概要</h2>
+
+            <h3>表示</h3>
+            <ul>
+                <li><strong>速度単位:</strong> mphまたはkm/h</li>
+                <li><strong>動画品質:</strong> 720p、1080p（デフォルト）、4K</li>
+                <li><strong>日付/時刻形式:</strong> 地域のカスタマイズ</li>
+                <li><strong>画面を常にオンにする:</strong> 録画中のタイムアウトを防ぎます</li>
+            </ul>
+
+            <h3>録画</h3>
+            <ul>
+                <li><strong>モード:</strong> AUTO、PER_TRIP、5/10/30分</li>
+                <li><strong>衝撃感度:</strong> 低（3.0G）、中（2.0Gデフォルト）、高（1.5G）</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="storage">
+            <h2>ストレージ管理</h2>
+
+            <h3>デフォルトの場所</h3>
+            <code>/Android/data/com.dashcam.app/files/DashCam/</code>
+
+            <h3>外部またはSDカードストレージ</h3>
+            <ol>
+                <li><strong>設定 → ストレージ設定</strong>に移動します。</li>
+                <li><strong>EXTERNAL</strong>を選択します。</li>
+                <li><strong>カスタムフォルダーを選択</strong>をタップして、SDカードまたはUSBパスを選択します。</li>
+            </ol>
+
+            <h3>ファイルサイズ（概算）</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>品質</th>
+                        <th>MB/分</th>
+                        <th>推奨用途</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>720p</td>
+                        <td>50</td>
+                        <td>長距離ドライブ、低ストレージ</td>
+                    </tr>
+                    <tr>
+                        <td>1080p</td>
+                        <td>80</td>
+                        <td>バランスの取れた品質（デフォルト）</td>
+                    </tr>
+                    <tr>
+                        <td>4K</td>
+                        <td>200</td>
+                        <td>高精細、大容量ストレージ</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alert alert-tip">
+                <p><strong>ヒント:</strong> テレメトリーログ（.srt、.csv、.gpx）は合計で0.2 MB/分未満です。</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="uploads">
+            <h2>アップロード設定</h2>
+            <p>DashCamは、Wi-Fi経由で<strong>SMB/CIFS共有</strong>、<strong>Google Drive</strong>、または<strong>OneDrive</strong>への自動アップロードをサポートしています。</p>
+
+            <h3>SMB設定</h3>
+            <ol>
+                <li>設定で<strong>アップロードを有効</strong>にします。</li>
+                <li><strong>アップロードタイミングを設定:</strong> 手動、録画中、または録画後。</li>
+                <li><strong>ネットワークポリシー:</strong> Wi-Fiのみ（デフォルト）または従量制を許可。</li>
+                <li><strong>サーバー詳細を入力:</strong>
+                    <ul>
+                        <li><strong>ホスト:</strong> Windowsホスト名（NetBIOS）またはIPアドレス。</li>
+                        <li><strong>共有:</strong> フォルダー共有名、例: <code>dashcam</code>。</li>
+                        <li><strong>ユーザー名 / パスワード:</strong> ローカルWindowsアカウントの認証情報。</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>ホスト名解決（Windowsネットワーク）</h3>
+            <p>DashCamは<strong>NetBIOS名前解決</strong>をサポートしており、IPアドレスの代わりにWindowsホスト名（例: <code>MYPC</code>）を使用できます。両方のデバイスが同じWi-Fiネットワークにあり、Windowsで<strong>ネットワーク探索</strong>が有効になっていることを確認してください。</p>
+            <blockquote>macOSまたはLinuxユーザーは、IPアドレスを使用して接続する必要がある場合があります。</blockquote>
+
+            <h3>ローカルWindowsアカウントが必要な理由</h3>
+            <p>Windows 10以降では、ゲスト共有がサポートされなくなりました。パスワードアクセス権を持つ専用の<strong>ローカルユーザー</strong>を作成してください:</p>
+            <ol>
+                <li><strong>Win + I → アカウント → 家族とその他のユーザー</strong>。</li>
+                <li><strong>アカウントを追加 → Microsoftアカウントを持たないユーザーを追加</strong>を選択します。</li>
+                <li>ユーザー名（例: <code>dashcam_user</code>）とパスワードを作成します。</li>
+                <li><strong>共有</strong>タブと<strong>セキュリティ</strong>タブの両方でフォルダーに<strong>読み取り/書き込み</strong>権限を付与します。</li>
+            </ol>
+            <div class="alert alert-tip">
+                <p><strong>ヒント:</strong> コマンドプロンプト → <code>ipconfig</code> → IPv4アドレスでPCのIPを確認できます。</p>
+            </div>
+
+            <h3>クラウドアップロード</h3>
+            <p>DashCamはクラウドストレージへの直接アップロードもサポートしています。</p>
+            <ul>
+                <li><strong>Google Drive:</strong> 完全サポート。設定で一度Googleアカウントを認証してください。</li>
+                <li><strong>OneDrive:</strong> 完全サポート。Microsoftアカウントにサインインし、ターゲットフォルダーを選択してください。</li>
+                <li><strong>Dropbox:</strong> ユーザーからのリクエストがあれば、今後のバージョンで実装予定です。</li>
+            </ul>
+            <p>アップロードが中断された場合は自動的に再試行され、転送成功後にローカルファイルを削除するオプションもあります。</p>
+        </section>
+
+        <hr>
+
+        <section id="troubleshooting">
+            <h2>トラブルシューティング</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>問題</th>
+                        <th>対処法</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>動画が表示されない</td>
+                        <td>カメラ権限を許可してください。アプリを再起動してください。</td>
+                    </tr>
+                    <tr>
+                        <td>GPSが固まる</td>
+                        <td>信号を取得するため屋外に移動してください。GPSがオンになっていることを確認してください。</td>
+                    </tr>
+                    <tr>
+                        <td>衝撃が検出されない</td>
+                        <td>感度を調整してください。マウントを固定してください。</td>
+                    </tr>
+                    <tr>
+                        <td>アップロードが失敗する</td>
+                        <td>認証情報を確認してください。同じWi-Fiにいることを確認してください。SMBポート445を有効にしてください。</td>
+                    </tr>
+                    <tr>
+                        <td>ホスト名が見つからない</td>
+                        <td>NetBIOS探索を確認してください。IPアドレスにフォールバックしてください。</td>
+                    </tr>
+                    <tr>
+                        <td>ストレージがいっぱい</td>
+                        <td>動画品質を下げるか、アップロード後の自動削除を有効にしてください。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>パフォーマンスのヒント</h3>
+            <ul>
+                <li>DashCamのAndroidバッテリー最適化を無効にしてください。</li>
+                <li>高品質の充電器（2A以上）を使用してください。</li>
+                <li>過熱を避けてください — 直射日光はシャットダウンを引き起こす可能性があります。</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="technical">
+            <h2>技術ノート</h2>
+            <ul>
+                <li><strong>動画:</strong> H.264/AVC MP4 @ 30 fps</li>
+                <li><strong>テレメトリー:</strong> SRT（GPS/速度）、CSV（10 Hzセンサーデータ）、GPX（マップトラック）</li>
+                <li><strong>衝撃バッファ:</strong> 2分間のローリングループ、衝撃後+10秒を保存</li>
+                <li><strong>権限:</strong> CAMERA、RECORD_AUDIO、ACCESS_FINE_LOCATION、INTERNET、WAKE_LOCK、FOREGROUND_SERVICE</li>
+                <li><strong>認証情報ストレージ:</strong> Android Keystoreで暗号化</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="limitations">
+            <h2>既知の制限事項（ベータ版）</h2>
+            <ul>
+                <li>Dropbox統合はユーザーの要望により保留中です。</li>
+                <li>非常に長い連続トリップには大容量ストレージが必要になる場合があります。</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="safety">
+            <h2>安全性と責任</h2>
+            <p>DashCamはドライバーをサポートしますが、安全運転の<strong>代替</strong>ではありません。車内での録画に関する現地の法律を常に遵守してください。</p>
+        </section>
+
+        <hr>
+
+        <section id="support">
+            <h2>サポートとフィードバック</h2>
+            <p>これは<strong>ベータ版リリース</strong>です — 日常使用に安定していますが、開発は継続中です。</p>
+            <ul>
+                <li>問題や提案はプロジェクトのGitHubページから報告してください。</li>
+                <li>スマートフォンのモデル、Androidバージョン、問題の簡単な説明を含めてください。</li>
+            </ul>
+            <p><strong>DashCamをご利用いただきありがとうございます。安全運転と責任ある録画を。</strong></p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ByteForge. 全著作権所有。</p>
+            <p>
+                <a href="manual.html">ユーザーマニュアル</a> |
+                <a href="eula.html">利用規約</a> |
+                <a href="license.html">ライセンス</a> |
+                <a href="privacy-policy.html">プライバシーポリシー</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
