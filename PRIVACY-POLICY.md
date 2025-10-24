@@ -2,7 +2,7 @@
 
 **Last updated:** October 2025  
 **Developer:** ByteForge  
-**Contact:** [paul.st.smith@gmail.com]
+**Contact:** [support@byteforge.biz]
 
 ---
 
@@ -98,7 +98,7 @@ When updates occur, the revised version and date will be published within the ap
 ## 10. Contact
 
 If you have questions about privacy or data handling, reach out at:  
-📧 [paul.st.smith@gmail.com]
+📧 [support@byteforge.biz]
 
 ByteForge values transparency and user trust.  
 We believe your recordings belong to **you** — and no one else.

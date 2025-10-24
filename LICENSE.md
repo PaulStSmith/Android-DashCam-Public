@@ -66,7 +66,7 @@ This agreement is governed by the laws of your country of residence, unless loca
 ---
 
 **For questions or permissions, contact:**  
-📧 [paul.st.smith@gmail.com]
+📧 [support@byteforge.biz]
 
 ---
 

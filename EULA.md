@@ -2,7 +2,7 @@
 
 **Last updated:** October 2025  
 **Developer:** ByteForge  
-**Contact:** [paul.st.smith@gmail.com]
+**Contact:** [support@byteforge.biz]
 
 ---
 
@@ -91,7 +91,7 @@ These terms are governed by the laws of your country or region of residence, unl
 ## 10. Contact
 
 For questions about these Terms or the app itself, please contact:  
-📧 [paul.st.smith@gmail.com]
+📧 [support@byteforge.biz]
 
 ---
 
