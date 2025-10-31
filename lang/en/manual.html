@@ -18,7 +18,7 @@
                 <img src="../../images/app-icon-96.png" alt="DashCam App Icon" class="app-icon">
                 <div class="header-text">
                     <h1>DashCam App — User Manual</h1>
-                    <p class="subtitle">Version 1.0.0 Beta | Android 8.0+ (API 26+) | Last Updated: October 2025</p>
+                    <p class="subtitle">Version 1.0.0 Beta | Android 8.0+ (API 26+) | Last Updated: 30 October 2025</p>
                 </div>
             </div>
         </div>
@@ -53,14 +53,17 @@
 
             <h3>Main Features</h3>
             <ul>
-                <li>Automatic recording linked to ignition or impact</li>
-                <li>Impact detection with circular video buffer</li>
-                <li>GPS, speed, and motion sensor data logging</li>
-                <li>Secure uploads to network shares (SMB/CIFS) or cloud (Google Drive, OneDrive)</li>
-                <li>Multiple output formats: MP4, SRT, CSV, GPX</li>
-                <li>Encrypted credential storage via Android Keystore</li>
-                <li>Hostname resolution via NetBIOS for Windows networks</li>
-                <li>Optimized for minimal user interaction — install once, drive daily</li>
+                <li><strong>Automatic recording</strong> linked to ignition or impact detection</li>
+                <li><strong>Impact detection</strong> with circular video buffer (saves 2 min before + 10 sec after)</li>
+                <li><strong>Comprehensive telemetry:</strong> GPS, speed, and 6-axis motion sensor logging</li>
+                <li><strong>Flexible uploads:</strong> Windows shared folder (SMB/CIFS) or cloud (Google Drive, OneDrive)</li>
+                <li><strong>Multiple output formats:</strong> MP4 video, SRT subtitles, CSV sensor data, GPX tracks</li>
+                <li><strong>Automatic storage management:</strong> Configurable auto-pruning when storage runs low</li>
+                <li><strong>Queue-based uploads:</strong> Automatic retry with background processing</li>
+                <li><strong>Secure credentials:</strong> Encrypted storage via Android Keystore</li>
+                <li><strong>NetBIOS support:</strong> Use Windows hostnames instead of IP addresses</li>
+                <li><strong>Battery optimized:</strong> Designed for continuous operation with minimal power draw</li>
+                <li><strong>Zero-touch operation:</strong> Install once, drive daily — no interaction needed</li>
             </ul>
         </section>
 
@@ -73,10 +76,19 @@
             <p>Grant these permissions at first launch:</p>
             <ul>
                 <li><strong>Camera</strong> – Required for video recording.</li>
-                <li><strong>Microphone</strong> – For audio capture.</li>
-                <li><strong>Location</strong> – For GPS and speed logging.</li>
-                <li><strong>Storage</strong> – (Android 9 and below) For saving recordings.</li>
+                <li><strong>Microphone</strong> – For audio capture in recordings.</li>
+                <li><strong>Location</strong> – For GPS coordinates, speed logging, and WiFi SSID detection (upload restrictions).</li>
+                <li><strong>Storage</strong> – (Android 9 and below) For saving recordings to device.</li>
             </ul>
+
+            <h3>Battery Optimization</h3>
+            <p>DashCam will request <strong>battery optimization exemption</strong> on first launch. This ensures the app can:</p>
+            <ul>
+                <li>Continue recording when the screen is off</li>
+                <li>Complete uploads after power disconnects</li>
+                <li>Monitor for impacts in AUTO mode</li>
+            </ul>
+            <p>You can check battery optimization status in <strong>Settings → System Settings</strong>.</p>
 
             <h3>Mounting Your Phone</h3>
             <ul>
@@ -96,15 +108,38 @@
 
         <section id="main-screen">
             <h2>Main Screen</h2>
+
+            <h3>Display Layout</h3>
             <ul>
-                <li><strong>Top-Left:</strong> Date and time</li>
-                <li><strong>Bottom-Left:</strong> GPS coordinates and heading</li>
-                <li><strong>Bottom-Right:</strong> Speed (mph or km/h)</li>
-                <li><strong>Center:</strong> Camera preview and recording indicator</li>
-                <li><strong>Floating Button:</strong> Tap red to start, white to stop manual recording</li>
+                <li><strong>Top-Left:</strong> Current date and time (format configurable in settings)</li>
+                <li><strong>Top-Right:</strong> Settings button + Upload status indicator</li>
+                <li><strong>Bottom-Left:</strong> GPS coordinates, compass direction, and recording status</li>
+                <li><strong>Bottom-Right:</strong> Current speed (mph or km/h, configurable)</li>
+                <li><strong>Center:</strong> Live camera preview</li>
+                <li><strong>Center-Right:</strong> Manual record button (FAB)</li>
             </ul>
+
+            <h3>Status Indicators</h3>
+            <ul>
+                <li><strong>REC (Red Box):</strong> Currently recording video</li>
+                <li><strong>AUTO (Green Box):</strong> AUTO mode buffer is running (waiting for impact)</li>
+                <li><strong>Manual Record Button:</strong>
+                    <ul>
+                        <li>Red circle (⏺) = Not recording, tap to start</li>
+                        <li>White square (⏹) = Recording, tap to stop</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Upload Indicators (Top-Right)</h3>
+            <ul>
+                <li><strong>Green upload icon (⏫):</strong> Active uploads in progress (shows count)</li>
+                <li><strong>Orange pause icon (⏸):</strong> Uploads paused (shows count, tap to open Queue Viewer)</li>
+                <li><strong>Red warning icon (⚠️):</strong> Upload errors (shows count, tap to view errors)</li>
+            </ul>
+
             <div class="alert alert-warning">
-                <p><strong>Note:</strong> If you see "EMULATOR – Video recording disabled," you're running in a virtual device. Use a real phone for recording.</p>
+                <p><strong>Note:</strong> If you see "EMULATOR – Video recording disabled," you're running on an Android emulator. Video recording requires a physical device with a camera.</p>
             </div>
         </section>
 
@@ -114,21 +149,54 @@
             <h2>Recording Modes</h2>
 
             <h3>1. AUTO (Impact Detection)</h3>
-            <p>Records continuously in short loops, saving only the last two minutes. When an impact (1.5G–3.0G) is detected, DashCam preserves:</p>
+            <p>Perfect for everyday driving — saves storage by only keeping important moments.</p>
             <ul>
-                <li>Two minutes before impact</li>
-                <li>Ten seconds after</li>
-                <li>All telemetry (GPS + sensor logs)</li>
+                <li>Records continuous 1-minute segments to a circular buffer</li>
+                <li>Keeps only the last 2 minutes in memory (30+ seconds guaranteed pre-impact)</li>
+                <li>When accelerometer detects impact, DashCam:
+                    <ul>
+                        <li>Preserves the 2-minute buffer (before impact)</li>
+                        <li>Records 10 additional seconds (after impact)</li>
+                        <li>Saves complete recording with all telemetry data</li>
+                    </ul>
+                </li>
+                <li><strong>Impact Sensitivity:</strong> HIGH (1.5G), MEDIUM (2.0G, default), LOW (3.0G)</li>
+                <li><strong>Filename:</strong> <code>DashCam-20250115-143022-Impact.mp4</code></li>
+                <li><strong>Power behavior:</strong> Ignores power events (only responds to impacts)</li>
             </ul>
 
             <h3>2. PER_TRIP</h3>
-            <p>Starts when ignition turns on, stops when it turns off. Saves each trip as a single file with synchronized logs.</p>
+            <p>One continuous recording per power cycle — ideal for complete trip documentation.</p>
+            <ul>
+                <li>Starts automatically when power connected (ignition on)</li>
+                <li>Stops when power disconnected (ignition off)</li>
+                <li>Configurable debounce delay (0-60 seconds, default 10s) prevents stops during brief power fluctuations</li>
+                <li>Automatic trip numbering: scans existing files to avoid duplicates</li>
+                <li><strong>Filename:</strong> <code>DashCam-20250115-Trip01.mp4</code></li>
+            </ul>
 
             <h3>3. Timed Loop (5/10/30 minutes)</h3>
-            <p>Splits recordings into smaller rotating files for easier upload and management.</p>
+            <p>Splits recordings into fixed-length segments for easier management and upload.</p>
+            <ul>
+                <li>Creates new segment every 5, 10, or 30 minutes</li>
+                <li>Aligns to clock boundaries (e.g., 10-min mode: :00, :10, :20, :30, :40, :50)</li>
+                <li>Automatically restarts next segment until power disconnected</li>
+                <li>Ideal for balancing file size with upload convenience</li>
+                <li><strong>Filename:</strong> <code>DashCam-20250115-1430.mp4</code> (rounded to segment boundary)</li>
+            </ul>
 
             <h3>4. Manual</h3>
-            <p>Tap the red button to start or stop recording anytime.</p>
+            <p>Complete control — record whenever you want.</p>
+            <ul>
+                <li>Tap the red circle button to start recording</li>
+                <li>Tap the white square button to stop recording</li>
+                <li>Available regardless of power state or other settings</li>
+                <li>Independent from automatic recording modes</li>
+            </ul>
+
+            <div class="alert alert-tip">
+                <p><strong>Tip:</strong> You can use Manual recording anytime, even while AUTO mode is running in the background.</p>
+            </div>
         </section>
 
         <hr>
@@ -136,18 +204,76 @@
         <section id="settings">
             <h2>Settings Overview</h2>
 
-            <h3>Display</h3>
+            <h3>Display Settings</h3>
             <ul>
                 <li><strong>Speed Units:</strong> mph or km/h</li>
-                <li><strong>Video Quality:</strong> 720p, 1080p (default), 4K</li>
-                <li><strong>Date/Time Format:</strong> Regional customization</li>
-                <li><strong>Keep Screen On:</strong> Prevent timeout while recording</li>
+                <li><strong>Date Format:</strong> MM/DD/YYYY, DD/MM/YYYY, or YYYY-MM-DD</li>
+                <li><strong>Time Format:</strong> 12-hour or 24-hour</li>
+                <li><strong>Keep Screen On:</strong> Prevent screen timeout while recording</li>
             </ul>
 
-            <h3>Recording</h3>
+            <h3>Video Settings</h3>
             <ul>
-                <li><strong>Mode:</strong> AUTO, PER_TRIP, 5/10/30 min</li>
-                <li><strong>Impact Sensitivity:</strong> Low (3.0G), Medium (2.0G default), High (1.5G)</li>
+                <li><strong>Video Quality:</strong>
+                    <ul>
+                        <li>720p (50 MB/min) — Long drives, limited storage</li>
+                        <li>1080p (80 MB/min, default) — Balanced quality</li>
+                        <li>2160p/4K (200 MB/min) — Maximum detail, requires large storage</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Recording Settings</h3>
+            <ul>
+                <li><strong>Recording Mode:</strong> AUTO, PER_TRIP, 5MIN, 10MIN, 30MIN</li>
+                <li><strong>Impact Sensitivity:</strong> HIGH (1.5G), MEDIUM (2.0G, default), LOW (3.0G)
+                    <br><em>Only visible in AUTO mode</em>
+                </li>
+                <li><strong>Storage Location:</strong> INTERNAL or EXTERNAL (SD card/USB)</li>
+                <li><strong>Select Custom Folder:</strong> Choose external storage path (SAF folder picker)</li>
+            </ul>
+
+            <h3>Upload Settings</h3>
+            <ul>
+                <li><strong>Enable Auto-Upload:</strong> Toggle automatic uploads after recording</li>
+                <li><strong>Allow Metered Connections:</strong> Enable uploads over cellular data (default: WiFi only)</li>
+                <li><strong>Delete After Upload:</strong> Automatically remove local files after successful upload</li>
+                <li><strong>Upload Queue Viewer:</strong> Monitor and manage upload queue</li>
+                <li><strong>Upload Destination:</strong> SMB, Google Drive, or OneDrive</li>
+                <li><strong>Destination Configuration:</strong> See detailed sections below for each type</li>
+            </ul>
+
+            <h3>Storage Management</h3>
+            <ul>
+                <li><strong>Auto-Manage Storage:</strong> Automatically delete oldest recordings when storage runs low (default: enabled)</li>
+                <li><strong>Target Free Space:</strong> Configurable threshold 1-20 GB (default: 5 GB)
+                    <ul>
+                        <li>WARNING level: Below 3 GB free</li>
+                        <li>CRITICAL level: Below 2 GB free</li>
+                    </ul>
+                </li>
+                <li><strong>Real-time Status:</strong> Current free space display with color-coded warnings</li>
+            </ul>
+
+            <h3>Power Management</h3>
+            <ul>
+                <li><strong>Power Disconnect Debounce:</strong> Delay before stopping on power loss (0-60 seconds, default 10s)
+                    <br><em>Prevents recording stops during brief power fluctuations</em>
+                </li>
+            </ul>
+
+            <h3>System Settings</h3>
+            <ul>
+                <li><strong>Battery Optimization Status:</strong> Shows whether app is exempt from battery optimization</li>
+                <li><strong>Open Battery Settings:</strong> Direct link to Android battery optimization settings</li>
+            </ul>
+
+            <h3>Legal & Documentation</h3>
+            <ul>
+                <li>User Manual (this document)</li>
+                <li>End User License Agreement (EULA)</li>
+                <li>Software License</li>
+                <li>Privacy Policy</li>
             </ul>
         </section>
 
@@ -158,13 +284,27 @@
 
             <h3>Default Location</h3>
             <code>/Android/data/com.dashcam.app/files/DashCam/</code>
+            <p>This is app-specific storage, accessible without special permissions on Android 10+.</p>
 
             <h3>External or SD Card Storage</h3>
             <ol>
-                <li>Go to <strong>Settings → Storage Settings</strong>.</li>
+                <li>Go to <strong>Settings → Recording Settings → Storage Location</strong>.</li>
                 <li>Choose <strong>EXTERNAL</strong>.</li>
-                <li>Tap <strong>Select Custom Folder</strong> and pick your SD card or USB path.</li>
+                <li>Tap <strong>Select Custom Folder</strong> and pick your SD card or USB storage path.</li>
+                <li>Grant permission when prompted (Storage Access Framework).</li>
             </ol>
+            <div class="alert alert-tip">
+                <p><strong>Tip:</strong> External storage is ideal for large-capacity SD cards or USB drives. Ensure the storage device remains connected while recording.</p>
+            </div>
+
+            <h3>File Formats & Output</h3>
+            <p>Each recording creates <strong>four synchronized files</strong>:</p>
+            <ul>
+                <li><strong>.mp4</strong> — H.264 video with audio (30 fps)</li>
+                <li><strong>.srt</strong> — SubRip subtitles with GPS, speed, date/time (1-second intervals)</li>
+                <li><strong>.csv</strong> — Sensor data: accelerometer, gyroscope, magnetometer, light, pressure, proximity (10 Hz sampling)</li>
+                <li><strong>.gpx</strong> — GPS track in GPX 1.1 XML format (compatible with mapping software)</li>
+            </ul>
 
             <h3>File Sizes (Approximate)</h3>
             <table>
@@ -172,6 +312,7 @@
                     <tr>
                         <th>Quality</th>
                         <th>MB/min</th>
+                        <th>1-hour Recording</th>
                         <th>Recommended Use</th>
                     </tr>
                 </thead>
@@ -179,22 +320,40 @@
                     <tr>
                         <td>720p</td>
                         <td>50</td>
-                        <td>Long drives, low storage</td>
+                        <td>~3 GB</td>
+                        <td>Long drives, limited storage</td>
                     </tr>
                     <tr>
                         <td>1080p</td>
                         <td>80</td>
+                        <td>~4.8 GB</td>
                         <td>Balanced quality (default)</td>
                     </tr>
                     <tr>
-                        <td>4K</td>
+                        <td>2160p/4K</td>
                         <td>200</td>
-                        <td>High detail, large storage</td>
+                        <td>~12 GB</td>
+                        <td>Maximum detail, large storage</td>
+                    </tr>
+                    <tr>
+                        <td>Telemetry</td>
+                        <td>&lt;0.2</td>
+                        <td>&lt;12 MB</td>
+                        <td>All modes (negligible)</td>
                     </tr>
                 </tbody>
             </table>
-            <div class="alert alert-tip">
-                <p><strong>Tip:</strong> Telemetry logs (.srt, .csv, .gpx) remain under 0.2 MB/min combined.</p>
+
+            <h3>Automatic Storage Management</h3>
+            <p>When <strong>Auto-Manage Storage</strong> is enabled (default), DashCam automatically deletes the oldest recordings when free space falls below your configured threshold.</p>
+            <ul>
+                <li><strong>Default threshold:</strong> 5 GB free space</li>
+                <li><strong>Configurable range:</strong> 1-20 GB</li>
+                <li><strong>Deletion behavior:</strong> Deletes entire recording sets (all 4 files together), oldest first</li>
+                <li><strong>Warning levels:</strong> Visual alerts when below 3 GB (WARNING) or 2 GB (CRITICAL)</li>
+            </ul>
+            <div class="alert alert-warning">
+                <p><strong>Important:</strong> If you disable auto-manage, monitor storage manually to prevent recording failures.</p>
             </div>
         </section>
 
@@ -202,52 +361,252 @@
 
         <section id="uploads">
             <h2>Upload Configuration</h2>
-            <p>DashCam supports automatic uploads over Wi-Fi to <strong>SMB/CIFS shares</strong>, <strong>Google Drive</strong>, or <strong>OneDrive</strong>.</p>
+            <p>DashCam supports automatic uploads to <strong>Windows shared folder <small>(SMB/CIFS)</small></strong>, <strong>Google Drive</strong>, and <strong>OneDrive</strong>. The queue-based upload system features automatic retry, background processing, and real-time monitoring.</p>
 
-            <h3>SMB Configuration</h3>
+            <h3>Upload Triggers</h3>
+            <p>Uploads can be triggered in three ways:</p>
             <ol>
-                <li><strong>Enable Uploads</strong> in Settings.</li>
-                <li><strong>Set Upload Timing:</strong> Manual, During Recording, or After Recording.</li>
-                <li><strong>Network Policy:</strong> Wi-Fi only (default) or Allow Metered.</li>
-                <li><strong>Enter Server Details:</strong>
+                <li><strong>Automatic (After Recording):</strong> When auto-upload is enabled, recordings upload immediately after completion</li>
+                <li><strong>Manual Queue All:</strong> Switch from MANUAL to auto-upload mode to queue all existing recordings</li>
+                <li><strong>Background Retry:</strong> Failed uploads automatically retry with exponential backoff (30s, 60s, 120s, 240s, 480s)</li>
+            </ol>
+
+            <h3>Network Requirements</h3>
+            <ul>
+                <li><strong>WiFi Recommended:</strong> By default, uploads only occur on WiFi networks</li>
+                <li><strong>Allow Metered:</strong> Enable this setting to allow uploads over cellular data (may incur data charges)</li>
+                <li><strong>Active Connection:</strong> Device must have internet connectivity during upload</li>
+            </ul>
+
+            <h3>Upload Queue Viewer</h3>
+            <p>Access the Queue Viewer from <strong>Settings → Upload Settings → Upload Queue Viewer</strong> to:</p>
+            <ul>
+                <li><strong>Monitor Progress:</strong> Real-time upload status with progress bars</li>
+                <li><strong>Pause/Resume:</strong> Control upload processing (state persists across app restarts)</li>
+                <li><strong>Retry Errors:</strong> Manually retry failed uploads</li>
+                <li><strong>View History:</strong> See previously uploaded recordings</li>
+                <li><strong>Reupload:</strong> Re-upload previously successful files if needed</li>
+                <li><strong>Clear Queue:</strong> Remove all queued items and rescan storage</li>
+            </ul>
+
+            <h3>Queue States</h3>
+            <ul>
+                <li><strong>IDLE:</strong> Queued, waiting to upload</li>
+                <li><strong>UPLOADING:</strong> Currently transferring</li>
+                <li><strong>ERROR:</strong> Failed (stops queue, manual retry required)</li>
+                <li><strong>DONE:</strong> Successfully uploaded (kept in history)</li>
+            </ul>
+
+            <hr>
+
+            <h3>Windows Shared Folder <small>(SMB/CIFS)</small> Configuration</h3>
+            <p>Upload recordings to your home computer, NAS, or Windows server.</p>
+
+            <h4>Setup Steps</h4>
+            <ol>
+                <li>In Settings, set <strong>Upload Destination Type</strong> to <strong>Network Folder</strong></li>
+                <li>Configure connection details:
                     <ul>
-                        <li><strong>Host:</strong> Windows hostname (NetBIOS) or IP address.</li>
-                        <li><strong>Share:</strong> Folder share name, e.g., <code>dashcam</code>.</li>
-                        <li><strong>Username / Password:</strong> Local Windows account credentials.</li>
+                        <li><strong>Host:</strong> Windows hostname (e.g., <code>MYPC</code>) or IP address (e.g., <code>192.168.1.100</code>)</li>
+                        <li><strong>Share Name:</strong> SMB share name (e.g., <code>dashcam</code>)</li>
+                        <li><strong>Path:</strong> Optional subfolder within share (e.g., <code>recordings/2025</code>)</li>
+                        <li><strong>Username:</strong> Windows local account username (optional for guest access)</li>
+                        <li><strong>Password:</strong> Account password (encrypted via Android Keystore)</li>
                     </ul>
                 </li>
+                <li><strong>WiFi Network Restrictions:</strong> Optionally restrict uploads to specific WiFi SSIDs (comma-separated)</li>
+                <li>Enable <strong>Auto-Upload</strong> in Settings</li>
             </ol>
 
-            <h3>Hostname Resolution (Windows Networks)</h3>
-            <p>DashCam supports <strong>NetBIOS name resolution</strong>, allowing you to use Windows hostnames instead of IP addresses (e.g., <code>MYPC</code>). Ensure both devices are on the same Wi-Fi network and that <strong>Network Discovery</strong> is enabled in Windows.</p>
-            <blockquote>macOS or Linux users may still need to connect using the IP address.</blockquote>
+            <h4>NetBIOS Hostname Resolution</h4>
+            <p>DashCam supports <strong>NetBIOS name resolution</strong>, allowing you to use Windows computer names instead of IP addresses.</p>
+            <ul>
+                <li><strong>Requirements:</strong> Both devices on same WiFi network, Windows Network Discovery enabled</li>
+                <li><strong>Example:</strong> Use <code>DESKTOP-ABC123</code> instead of <code>192.168.1.100</code></li>
+                <li><strong>Fallback:</strong> If hostname fails, use IP address (find via <code>ipconfig</code> in Command Prompt)</li>
+            </ul>
+            <blockquote><em>Note: NetBIOS primarily works with Windows networks. macOS/Linux users should use IP addresses.</em></blockquote>
 
-            <h3>Why You Need a Local Windows Account</h3>
-            <p>Windows 10+ no longer supports guest shares. Create a dedicated <strong>local user</strong> with password access:</p>
+            <h4>Creating a Windows Local Account</h4>
+            <p>Windows 10+ requires authenticated access (no guest shares):</p>
             <ol>
-                <li><strong>Win + I → Accounts → Family & other users</strong>.</li>
-                <li>Select <strong>Add account → Add a user without a Microsoft account</strong>.</li>
-                <li>Create username (e.g., <code>dashcam_user</code>) and password.</li>
-                <li>Grant folder <strong>Read/Write</strong> permissions under both <strong>Sharing</strong> and <strong>Security</strong> tabs.</li>
+                <li>Press <strong>Win + I</strong> → <strong>Accounts</strong> → <strong>Family & other users</strong></li>
+                <li>Click <strong>Add someone else to this PC</strong></li>
+                <li>Select <strong>I don't have this person's sign-in information</strong></li>
+                <li>Select <strong>Add a user without a Microsoft account</strong></li>
+                <li>Create username (e.g., <code>dashcam</code>) and password</li>
+                <li>Right-click the shared folder → <strong>Properties</strong> → <strong>Sharing</strong> tab → <strong>Share</strong></li>
+                <li>Add the new user with <strong>Read/Write</strong> permissions</li>
+                <li>Also check the <strong>Security</strong> tab and grant Read/Write permissions there</li>
             </ol>
-            <div class="alert alert-tip">
-                <p><strong>Tip:</strong> Find your PC's IP via Command Prompt → <code>ipconfig</code> → IPv4 Address.</p>
+
+            <h4>WiFi SSID Restrictions (SMB Only)</h4>
+            <p>Prevent uploads over public WiFi by restricting to specific networks:</p>
+            <ul>
+                <li><strong>Setting:</strong> Upload Only On Networks (comma-separated SSIDs)</li>
+                <li><strong>Example:</strong> <code>HomeWiFi,Office5G</code></li>
+                <li><strong>Behavior:</strong> If SSIDs configured, uploads only occur when connected to listed networks</li>
+                <li><strong>Auto-add:</strong> App automatically adds current SSID when first configuring SMB</li>
+                <li><strong>Blank = Any Network:</strong> Leave empty to allow uploads on any WiFi</li>
+            </ul>
+            <div class="alert alert-warning">
+                <p><strong>Note:</strong> SSID restrictions apply <strong>only to SMB destinations</strong>. Google Drive and OneDrive uploads work on any network (internet-based services).</p>
             </div>
 
-            <h3>Cloud Uploads</h3>
-            <p>DashCam can also upload directly to cloud storage.</p>
+            <hr>
+
+            <h3>Google Drive Configuration</h3>
+            <p>Upload recordings directly to your Google Drive account.</p>
+
+            <h4>Setup Steps</h4>
+            <ol>
+                <li>In Settings, set <strong>Upload Destination Type</strong> to <strong>Google Drive</strong></li>
+                <li>Tap <strong>Connect Google Account</strong></li>
+                <li>Select your Google account from the native account picker</li>
+                <li>Authorize DashCam to access Google Drive (Files.ReadWrite permission)</li>
+                <li>Configure folder structure:
+                    <ul>
+                        <li><strong>Root Folder:</strong> Main folder name (e.g., <code>DashCam</code>) - created automatically if doesn't exist</li>
+                        <li><strong>Subfolder:</strong> Optional subfolder path (e.g., <code>2025/January</code>)</li>
+                    </ul>
+                </li>
+                <li>Enable <strong>Auto-Upload</strong> in Settings</li>
+            </ol>
+
+            <h4>Upload Methods</h4>
             <ul>
-                <li><strong>Google Drive:</strong> Fully supported. Authorize your Google account once in settings.</li>
-                <li><strong>OneDrive:</strong> Fully supported. Sign in to your Microsoft account and select target folder.</li>
-                <li><strong>Dropbox:</strong> Planned for future versions if requested by users.</li>
+                <li><strong>Multipart Upload:</strong> Files under 5 MB upload in one request</li>
+                <li><strong>Resumable Upload:</strong> Files 5 MB and larger upload in 5 MB chunks (can resume if interrupted)</li>
             </ul>
-            <p>Uploads retry automatically if interrupted, and you may choose to delete local files after successful transfer.</p>
+
+            <h4>Authentication & Security</h4>
+            <ul>
+                <li><strong>OAuth 2.0:</strong> Industry-standard secure authentication</li>
+                <li><strong>Token Storage:</strong> Encrypted via Android Keystore (hardware-backed if available)</li>
+                <li><strong>Auto-Refresh:</strong> Tokens automatically refresh 5 minutes before expiry</li>
+                <li><strong>Disconnect:</strong> Tap "Disconnect Google Account" to revoke access and clear tokens</li>
+            </ul>
+
+            <hr>
+
+            <h3>OneDrive Configuration</h3>
+            <p>Upload recordings to your Microsoft OneDrive account.</p>
+
+            <h4>Setup Steps</h4>
+            <ol>
+                <li>In Settings, set <strong>Upload Destination Type</strong> to <strong>OneDrive</strong></li>
+                <li>Tap <strong>Connect Microsoft Account</strong></li>
+                <li>Sign in via Microsoft's OAuth 2.0 web flow (opens in WebView)</li>
+                <li>Authorize DashCam to access OneDrive (Files.ReadWrite permission)</li>
+                <li>Configure folder structure:
+                    <ul>
+                        <li><strong>Root Folder:</strong> Main folder name (e.g., <code>DashCam</code>) - created automatically if doesn't exist</li>
+                        <li><strong>Subfolder:</strong> Optional subfolder path (e.g., <code>2025/January</code>)</li>
+                    </ul>
+                </li>
+                <li>Enable <strong>Auto-Upload</strong> in Settings</li>
+            </ol>
+
+            <h4>Upload Methods</h4>
+            <ul>
+                <li><strong>Simple Upload:</strong> Files under 4 MB upload in one request</li>
+                <li><strong>Resumable Session:</strong> Files 4 MB and larger use upload sessions (can resume if interrupted)</li>
+            </ul>
+
+            <h4>Authentication & Security</h4>
+            <ul>
+                <li><strong>OAuth 2.0:</strong> Microsoft Graph API v1.0 authentication</li>
+                <li><strong>Token Storage:</strong> Encrypted via Android Keystore (hardware-backed if available)</li>
+                <li><strong>Auto-Refresh:</strong> Tokens automatically refresh 5 minutes before expiry</li>
+                <li><strong>Disconnect:</strong> Tap "Disconnect Microsoft Account" to revoke access and clear tokens</li>
+            </ul>
+
+            <hr>
+
+            <h3>General Upload Settings</h3>
+
+            <h4>Delete After Upload</h4>
+            <p>When enabled, DashCam automatically deletes local files after successful upload. This helps manage storage automatically.</p>
+            <ul>
+                <li><strong>Safety:</strong> Files only deleted after confirmed successful upload</li>
+                <li><strong>Telemetry:</strong> All 4 files deleted together (mp4, srt, csv, gpx)</li>
+                <li><strong>Tracking:</strong> Upload status persists in DataStore</li>
+            </ul>
+
+            <h4>Retry Mechanism</h4>
+            <p>Failed uploads automatically retry via Android WorkManager:</p>
+            <ul>
+                <li><strong>Exponential Backoff:</strong> 30s, 60s, 120s, 240s, 480s (8 minutes max)</li>
+                <li><strong>Maximum Attempts:</strong> 5 retries before giving up</li>
+                <li><strong>Network Constraints:</strong> Respects metered/WiFi-only policy</li>
+                <li><strong>Background Processing:</strong> Works even when app is closed</li>
+            </ul>
+
+            <h4>Common Upload Failures</h4>
+            <ul>
+                <li><strong>Network Unavailable:</strong> Queue paused, retries when network available</li>
+                <li><strong>SSID Mismatch (SMB):</strong> Not on allowed WiFi network</li>
+                <li><strong>Authentication Failed:</strong> OAuth token expired or invalid credentials</li>
+                <li><strong>Destination Unavailable:</strong> SMB share offline or cloud service down</li>
+                <li><strong>Configuration Invalid:</strong> Missing required settings (host, share, account)</li>
+            </ul>
+
+            <div class="alert alert-tip">
+                <p><strong>Tip:</strong> Monitor upload status via the top-right indicator on the main screen. Tap to open Queue Viewer for detailed information.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="playback">
+            <h2>Viewing Recordings</h2>
+
+            <h3>In-App Playback</h3>
+            <p>Tap any recording from the Recordings screen to view with synchronized telemetry overlays.</p>
+            <ul>
+                <li><strong>Video Playback:</strong> Built-in player with standard controls (play/pause, seek, volume)</li>
+                <li><strong>SRT Subtitles:</strong> GPS, speed, and timestamp overlays automatically displayed (position-matched)</li>
+                <li><strong>Timeline Sync:</strong> Telemetry data synchronized with video playback</li>
+            </ul>
+
+            <h3>External Playback</h3>
+            <p>All files are standard formats compatible with external software:</p>
+            <ul>
+                <li><strong>Video (.mp4):</strong> Play in VLC, Windows Media Player, QuickTime, etc.</li>
+                <li><strong>Subtitles (.srt):</strong> Load alongside video in most media players
+                    <ul>
+                        <li>VLC: Drag .srt file onto video or place in same folder with matching name</li>
+                        <li>Shows GPS coordinates, speed, date/time as positioned overlays</li>
+                    </ul>
+                </li>
+                <li><strong>Sensor Data (.csv):</strong> Open in Excel, Google Sheets, Python/R for analysis
+                    <ul>
+                        <li>Columns: Timestamp, Accel X/Y/Z, Gyro X/Y/Z, Mag X/Y/Z, Light, Pressure, Proximity</li>
+                        <li>10 Hz sampling (100ms intervals)</li>
+                    </ul>
+                </li>
+                <li><strong>GPS Track (.gpx):</strong> Import into mapping software
+                    <ul>
+                        <li>Compatible with: Google Earth, Garmin BaseCamp, GPX Viewer, etc.</li>
+                        <li>GPX 1.1 XML format with track points and timestamps</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Accessing Files</h3>
+            <ul>
+                <li><strong>Internal Storage:</strong> Use a file manager app or connect phone via USB (MTP mode)</li>
+                <li><strong>External Storage:</strong> Remove SD card and insert into computer, or use USB connection</li>
+                <li><strong>Path:</strong> <code>/Android/data/com.dashcam.app/files/DashCam/</code> (internal) or your configured custom path</li>
+            </ul>
         </section>
 
         <hr>
 
         <section id="troubleshooting">
             <h2>Troubleshooting</h2>
+
+            <h3>Common Issues</h3>
             <table>
                 <thead>
                     <tr>
@@ -257,60 +616,190 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>No video</td>
-                        <td>Grant camera permission; restart app.</td>
+                        <td>No video preview</td>
+                        <td>Grant camera permission in Android Settings → Apps → DashCam → Permissions. Restart app.</td>
                     </tr>
                     <tr>
-                        <td>GPS stuck</td>
-                        <td>Move outdoors for signal; ensure GPS is on.</td>
+                        <td>GPS not acquiring</td>
+                        <td>Move outdoors for clear sky view. Ensure Location permission granted and GPS enabled in Android settings. May take 30-60s for initial fix.</td>
                     </tr>
                     <tr>
-                        <td>Impact not detected</td>
-                        <td>Adjust sensitivity; secure mount.</td>
+                        <td>Impact not detected (AUTO mode)</td>
+                        <td>Adjust sensitivity to HIGH (1.5G) in settings. Ensure phone is securely mounted (loose mount absorbs impacts). Test with gentle tap on mount.</td>
                     </tr>
                     <tr>
-                        <td>Upload fails</td>
-                        <td>Confirm credentials; ensure same Wi-Fi; enable SMB port 445.</td>
+                        <td>Recording stops unexpectedly</td>
+                        <td>Check storage space (auto-prune may be deleting files). Verify battery optimization exemption granted. Check power disconnect debounce setting.</td>
                     </tr>
                     <tr>
-                        <td>Hostname not found</td>
-                        <td>Verify NetBIOS discovery; fallback to IP.</td>
+                        <td>App closes when screen off</td>
+                        <td>Grant battery optimization exemption: Settings → System Settings → Open Battery Settings → Select "Don't optimize" for DashCam.</td>
                     </tr>
                     <tr>
-                        <td>Storage full</td>
-                        <td>Lower video quality or enable auto-delete after upload.</td>
+                        <td>Storage full errors</td>
+                        <td>Enable auto-manage storage in settings. Increase target free space threshold. Lower video quality. Enable delete after upload.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Upload Troubleshooting</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Possible Fix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SMB upload fails</td>
+                        <td>Verify host/share/credentials correct. Ensure both devices on same WiFi. Check SSID restrictions. Enable port 445 in Windows Firewall. Verify local Windows account has Read/Write permissions.</td>
+                    </tr>
+                    <tr>
+                        <td>Hostname not found (SMB)</td>
+                        <td>Verify Windows Network Discovery enabled. Check NetBIOS is running. Fallback to IP address (find via <code>ipconfig</code> in Command Prompt).</td>
+                    </tr>
+                    <tr>
+                        <td>Google Drive auth fails</td>
+                        <td>Disconnect and reconnect account. Check Google account is active. Verify internet connection. Clear app data if persistent.</td>
+                    </tr>
+                    <tr>
+                        <td>OneDrive auth fails</td>
+                        <td>Disconnect and reconnect account. Check Microsoft account is active. Verify internet connection. Try different browser if WebView fails.</td>
+                    </tr>
+                    <tr>
+                        <td>Upload stuck in queue</td>
+                        <td>Check network connectivity. Verify WiFi-only/metered settings. Check SSID restrictions (SMB). Open Queue Viewer and check error message. Try manual retry.</td>
+                    </tr>
+                    <tr>
+                        <td>Uploads use cellular data</td>
+                        <td>Disable "Allow Metered Connections" in Upload Settings. Uploads will only occur on WiFi.</td>
                     </tr>
                 </tbody>
             </table>
 
             <h3>Performance Tips</h3>
             <ul>
-                <li>Disable Android battery optimization for DashCam.</li>
-                <li>Use a quality charger (2A+).</li>
-                <li>Avoid overheating — direct sunlight may trigger shutdown.</li>
+                <li><strong>Battery Optimization:</strong> Disable Android battery optimization for DashCam (Settings → System Settings)</li>
+                <li><strong>Quality Charger:</strong> Use 2A+ charger to ensure stable power during recording and uploading</li>
+                <li><strong>Heat Management:</strong> Avoid direct sunlight exposure — overheating may trigger thermal throttling or shutdown</li>
+                <li><strong>Storage Performance:</strong> Use high-quality SD cards (Class 10, UHS-I or better) for external storage</li>
+                <li><strong>Network Performance:</strong> For SMB uploads, use 5GHz WiFi when available (faster transfer speeds)</li>
+                <li><strong>Clean Storage:</strong> Periodically clear old recordings manually or enable delete-after-upload</li>
             </ul>
+
+            <h3>Advanced Diagnostics</h3>
+            <p>If issues persist, check Android Logcat for detailed error messages:</p>
+            <ol>
+                <li>Enable Developer Options (Settings → About Phone → Tap Build Number 7 times)</li>
+                <li>Enable USB Debugging (Settings → Developer Options)</li>
+                <li>Connect to computer and run: <code>adb logcat -s DashCam:*</code></li>
+                <li>Look for error messages tagged with component names (VideoRecorder, UploadManager, etc.)</li>
+            </ol>
         </section>
 
         <hr>
 
         <section id="technical">
-            <h2>Technical Notes</h2>
+            <h2>Technical Specifications</h2>
+
+            <h3>Video Encoding</h3>
             <ul>
-                <li><strong>Video:</strong> H.264/AVC MP4 @ 30 fps</li>
-                <li><strong>Telemetry:</strong> SRT (GPS/speed), CSV (10 Hz sensor data), GPX (map track)</li>
-                <li><strong>Impact Buffer:</strong> Two-minute rolling loop, saves +10s post-impact</li>
-                <li><strong>Permissions:</strong> CAMERA, RECORD_AUDIO, ACCESS_FINE_LOCATION, INTERNET, WAKE_LOCK, FOREGROUND_SERVICE</li>
-                <li><strong>Credential Storage:</strong> Encrypted via Android Keystore</li>
+                <li><strong>Codec:</strong> H.264/AVC (MP4 container)</li>
+                <li><strong>Frame Rate:</strong> 30 fps (fixed)</li>
+                <li><strong>Resolution:</strong> 1280×720, 1920×1080, or 3840×2160 (device-dependent)</li>
+                <li><strong>Orientation:</strong> Landscape (90° rotation for dashcam mounting)</li>
+                <li><strong>Audio:</strong> AAC codec, included in MP4</li>
+            </ul>
+
+            <h3>Telemetry Systems</h3>
+            <ul>
+                <li><strong>GPS Provider:</strong> Google Play Services Fused Location (1-second updates)</li>
+                <li><strong>SRT Format:</strong> SubRip subtitles with positioned overlays (top-left, bottom-left, bottom-right)</li>
+                <li><strong>CSV Sampling:</strong> 10 Hz (100ms intervals) for accelerometer, gyroscope, magnetometer, light, pressure, proximity</li>
+                <li><strong>GPX Format:</strong> GPS Exchange Format 1.1 XML with track points and timestamps</li>
+            </ul>
+
+            <h3>Impact Detection</h3>
+            <ul>
+                <li><strong>Algorithm:</strong> Low-pass filtered accelerometer magnitude (alpha=0.8)</li>
+                <li><strong>Thresholds:</strong> HIGH=1.5G (15 m/s²), MEDIUM=2.0G (20 m/s²), LOW=3.0G (30 m/s²)</li>
+                <li><strong>Buffer:</strong> 2-minute rolling buffer (1-minute segments), 10-second post-impact capture</li>
+                <li><strong>Update Rate:</strong> ~20ms (SENSOR_DELAY_GAME)</li>
+            </ul>
+
+            <h3>Storage Architecture</h3>
+            <ul>
+                <li><strong>Internal:</strong> Direct File API to app-specific directory</li>
+                <li><strong>External:</strong> Storage Access Framework (SAF) with DocumentTree persistence</li>
+                <li><strong>FileAccessManager:</strong> Unified abstraction layer for both File and DocumentFile APIs</li>
+                <li><strong>Video Output:</strong> FileOutputOptions (internal), FileDescriptorOutputOptions (external SAF)</li>
+            </ul>
+
+            <h3>Upload Architecture</h3>
+            <ul>
+                <li><strong>SMB/CIFS:</strong> jcifs-ng library with NetBIOS name resolution</li>
+                <li><strong>Google Drive:</strong> Google Sign-In API + Drive REST API v3 (multipart <5MB, resumable ≥5MB)</li>
+                <li><strong>OneDrive:</strong> Microsoft Graph API v1.0 (simple <4MB, resumable session ≥4MB)</li>
+                <li><strong>Retry:</strong> Android WorkManager with exponential backoff (5 attempts max)</li>
+                <li><strong>Queue:</strong> Sequential processing with StateFlow-based progress tracking</li>
+            </ul>
+
+            <h3>Security</h3>
+            <ul>
+                <li><strong>OAuth Tokens:</strong> Encrypted via EncryptedSharedPreferences + Android Keystore</li>
+                <li><strong>SMB Credentials:</strong> Encrypted via Android Keystore (hardware-backed when available)</li>
+                <li><strong>Token Refresh:</strong> Automatic refresh 5 minutes before expiry</li>
+                <li><strong>Permissions:</strong> CAMERA, RECORD_AUDIO, ACCESS_FINE_LOCATION, INTERNET, WAKE_LOCK, FOREGROUND_SERVICE, ACCESS_NETWORK_STATE</li>
+            </ul>
+
+            <h3>Framework & Libraries</h3>
+            <ul>
+                <li><strong>UI:</strong> Jetpack Compose (declarative UI)</li>
+                <li><strong>Camera:</strong> CameraX (with quality selector fallback)</li>
+                <li><strong>Preferences:</strong> DataStore (Preferences + Proto)</li>
+                <li><strong>Concurrency:</strong> Kotlin Coroutines + Flow</li>
+                <li><strong>Media Playback:</strong> ExoPlayer</li>
+                <li><strong>Background Work:</strong> WorkManager</li>
+                <li><strong>SMB:</strong> jcifs-ng</li>
+            </ul>
+
+            <h3>Device Requirements</h3>
+            <ul>
+                <li><strong>Minimum Android:</strong> 8.0 Oreo (API 26)</li>
+                <li><strong>Target Android:</strong> 14 (API 34)</li>
+                <li><strong>Camera:</strong> Back-facing camera required (front camera not supported)</li>
+                <li><strong>Sensors:</strong> GPS, accelerometer required; gyroscope, magnetometer, light, pressure, proximity optional</li>
+                <li><strong>Storage:</strong> Minimum 8 GB recommended (16+ GB for extended recording)</li>
             </ul>
         </section>
 
         <hr>
 
         <section id="limitations">
-            <h2>Known Limitations (Beta)</h2>
+            <h2>Known Limitations</h2>
+
+            <h3>Current Limitations (Beta)</h3>
             <ul>
-                <li>Dropbox integration pending user demand.</li>
-                <li>Extremely long continuous trips may require large storage capacity.</li>
+                <li><strong>Emulator Support:</strong> Video recording disabled on Android emulators (CameraX limitation). Telemetry-only mode works.</li>
+                <li><strong>MediaMuxer Compatibility:</strong> May fail on some devices in AUTO mode (fallback: saves last segment only)</li>
+                <li><strong>Large PER_TRIP Files:</strong> Extremely long continuous trips (4+ hours at 1080p) may exceed 20 GB — ensure adequate storage</li>
+                <li><strong>WiFi Location Permission:</strong> Android 10+ requires ACCESS_FINE_LOCATION for SSID access (WiFi restrictions)</li>
+            </ul>
+
+            <h3>Microsoft OneDrive Considerations</h3>
+            <ul>
+                <li><strong>Client Secret Expiration:</strong> Microsoft client secret expires approximately October 2026</li>
+                <li><strong>Impact:</strong> App will require update or backend server implementation before expiration</li>
+                <li><strong>Mitigation:</strong> Users will be notified well in advance via app update</li>
+            </ul>
+
+            <h3>Planned Features</h3>
+            <ul>
+                <li><strong>Thermal Management:</strong> Temperature monitoring and recording throttling (next priority)</li>
+                <li><strong>Dropbox Integration:</strong> Pending user demand</li>
+                <li><strong>Automated Testing:</strong> Test infrastructure exists but tests not yet implemented</li>
+                <li><strong>File Type Filtering:</strong> UI for TELEMETRY_ONLY upload mode (architecture complete)</li>
             </ul>
         </section>
 

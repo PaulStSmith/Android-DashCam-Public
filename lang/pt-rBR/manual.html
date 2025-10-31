@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DashCam App - Transforme seu Android em uma câmera veicular profissional">
+    <meta name="description" content="DashCam App - Transforme seu telefone Android em uma câmera veicular profissional">
     <title>DashCam App - Manual do Usuário</title>
     <link rel="icon" type="image/png" sizes="192x192" href="../../images/app-icon-192.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../../images/app-icon-96.png">
@@ -18,7 +18,7 @@
                 <img src="../../images/app-icon-96.png" alt="Ícone do DashCam App" class="app-icon">
                 <div class="header-text">
                     <h1>DashCam App — Manual do Usuário</h1>
-                    <p class="subtitle">Versão 1.0.0 Beta | Android 8.0+ (API 26+) | Última atualização: Outubro 2025</p>
+                    <p class="subtitle">Versão 1.0.0 Beta | Android 8.0+ (API 26+) | Última Atualização: 30 de outubro de 2025</p>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
 
     <nav>
         <ul>
-            <li><a href="manual.html" class="active">Manual do Usuário</a></li>
+            <li><a href="manual.html"  class="active">Manual do Usuário</a></li>
             <li><a href="eula.html">Termos de Uso</a></li>
             <li><a href="license.html">Licença</a></li>
             <li><a href="privacy-policy.html">Política de Privacidade</a></li>
@@ -37,11 +37,11 @@
         <section id="quick-start">
             <h2>Início Rápido</h2>
             <ol>
-                <li><strong>Instale e Abra:</strong> Conceda permissões de câmera, microfone e localização quando solicitado.</li>
-                <li><strong>Monte o Celular:</strong> Fixe com segurança no para-brisa em orientação paisagem, com a câmera traseira voltada para frente.</li>
-                <li><strong>Ligue o Dispositivo:</strong> Conecte a uma fonte de energia que ligue com a ignição do carro (ACC). O app começa a gravar automaticamente ao detectar energia e para quando a energia é desligada.</li>
+                <li><strong>Instalar e Abrir:</strong> Conceda permissões de câmera, microfone e localização quando solicitado.</li>
+                <li><strong>Montar seu Telefone:</strong> Monte-o com segurança no para-brisa em orientação paisagem, com a câmera traseira voltada para frente.</li>
+                <li><strong>Ligar à Energia:</strong> Conecte a uma fonte de energia que liga junto com a ignição do carro (ACC). O app inicia automaticamente a gravação quando detecta energia e para quando a energia é perdida.</li>
                 <li><strong>Armazenamento:</strong> Os vídeos são salvos internamente por padrão. Você pode mudar para cartão SD ou armazenamento externo nas configurações.</li>
-                <li><strong>Uploads (Opcional):</strong> Configure uploads para seu computador, NAS ou nuvem (Google Drive, OneDrive) via Wi-Fi.</li>
+                <li><strong>Uploads (Opcional):</strong> Configure uploads para seu computador doméstico, NAS ou armazenamento em nuvem (Google Drive, OneDrive) via Wi-Fi.</li>
             </ol>
         </section>
 
@@ -49,46 +49,58 @@
 
         <section id="introduction">
             <h2>Introdução</h2>
-            <p>O DashCam transforma um Android antigo em uma câmera veicular confiável e completa. Projetado para <strong>estabilidade, automação e simplicidade</strong>, grava automaticamente quando o carro liga e salva ou faz upload das gravações ao desligar.</p>
+            <p>O DashCam transforma um telefone Android antigo em uma câmera veicular confiável e completa. Projetado para <strong>estabilidade, automação e simplicidade</strong>, ele grava automaticamente quando seu carro liga e salva ou faz upload das gravações quando ele desliga.</p>
 
             <h3>Principais Recursos</h3>
             <ul>
-                <li>Gravação automática vinculada à ignição ou impacto</li>
-                <li>Detecção de impacto com buffer circular de vídeo</li>
-                <li>Registro de dados de GPS, velocidade e sensores de movimento</li>
-                <li>Uploads seguros para compartilhamentos de rede (SMB/CIFS) ou nuvem (Google Drive, OneDrive)</li>
-                <li>Múltiplos formatos de saída: MP4, SRT, CSV, GPX</li>
-                <li>Armazenamento de credenciais criptografado via Android Keystore</li>
-                <li>Resolução de hostname via NetBIOS para redes Windows</li>
-                <li>Otimizado para mínima interação — instale uma vez, use diariamente</li>
+                <li><strong>Gravação automática</strong> vinculada à ignição ou detecção de impacto</li>
+                <li><strong>Detecção de impacto</strong> com buffer circular de vídeo (salva 2 min antes + 10 seg depois)</li>
+                <li><strong>Telemetria abrangente:</strong> registro de GPS, velocidade e sensor de movimento de 6 eixos</li>
+                <li><strong>Uploads flexíveis:</strong> pasta compartilhada do Windows (SMB/CIFS) ou nuvem (Google Drive, OneDrive)</li>
+                <li><strong>Múltiplos formatos de saída:</strong> vídeo MP4, legendas SRT, dados de sensor CSV, trilhas GPX</li>
+                <li><strong>Gerenciamento automático de armazenamento:</strong> remoção automática configurável quando o armazenamento está baixo</li>
+                <li><strong>Uploads baseados em fila:</strong> tentativa automática com processamento em segundo plano</li>
+                <li><strong>Credenciais seguras:</strong> armazenamento criptografado via Android Keystore</li>
+                <li><strong>Suporte NetBIOS:</strong> use nomes de host do Windows ao invés de endereços IP</li>
+                <li><strong>Otimizado para bateria:</strong> projetado para operação contínua com consumo mínimo de energia</li>
+                <li><strong>Operação sem toque:</strong> instale uma vez, dirija diariamente — nenhuma interação necessária</li>
             </ul>
         </section>
 
         <hr>
 
         <section id="getting-started">
-            <h2>Primeiros Passos</h2>
+            <h2>Começando</h2>
 
             <h3>Permissões</h3>
             <p>Conceda estas permissões no primeiro uso:</p>
             <ul>
                 <li><strong>Câmera</strong> – Necessária para gravação de vídeo.</li>
-                <li><strong>Microfone</strong> – Para captura de áudio.</li>
-                <li><strong>Localização</strong> – Para registro de GPS e velocidade.</li>
-                <li><strong>Armazenamento</strong> – (Android 9 ou inferior) Para salvar gravações.</li>
+                <li><strong>Microfone</strong> – Para captura de áudio nas gravações.</li>
+                <li><strong>Localização</strong> – Para coordenadas GPS, registro de velocidade e detecção de SSID Wi-Fi (restrições de upload).</li>
+                <li><strong>Armazenamento</strong> – (Android 9 e anteriores) Para salvar gravações no dispositivo.</li>
             </ul>
 
-            <h3>Montagem do Celular</h3>
+            <h3>Otimização de Bateria</h3>
+            <p>O DashCam solicitará <strong>isenção de otimização de bateria</strong> no primeiro uso. Isso garante que o app possa:</p>
             <ul>
-                <li>Use um <strong>suporte de para-brisa ou painel</strong> com visão estável para frente.</li>
-                <li>Mantenha os cabos organizados e fora do campo de visão.</li>
+                <li>Continuar gravando quando a tela estiver desligada</li>
+                <li>Completar uploads depois que a energia é desconectada</li>
+                <li>Monitorar impactos no modo AUTO</li>
+            </ul>
+            <p>Você pode verificar o status de otimização de bateria em <strong>Configurações → Configurações do Sistema</strong>.</p>
+
+            <h3>Montando seu Telefone</h3>
+            <ul>
+                <li>Use um <strong>suporte de para-brisa ou painel</strong> com uma visão estável para frente.</li>
+                <li>Mantenha os cabos organizados e fora do seu campo de visão.</li>
                 <li>Conecte a energia de um carregador ligado à ignição (ACC) para operação automática.</li>
             </ul>
 
             <h3>Comportamento de Energia</h3>
             <ul>
-                <li><strong>Ignição Ligada (Energia Conectada):</strong> Gravação inicia automaticamente.</li>
-                <li><strong>Ignição Desligada (Energia Desconectada):</strong> Gravação para com segurança e uploads começam (se configurado). O celular permanece acordado para finalizar uploads e depois entra em modo de economia de energia.</li>
+                <li><strong>Ignição Ligada (Energia Conectada):</strong> A gravação inicia automaticamente.</li>
+                <li><strong>Ignição Desligada (Energia Perdida):</strong> A gravação para com segurança e os uploads começam (se configurado). O telefone permanece ativo para concluir os uploads, depois entra em modo de espera para economizar energia.</li>
             </ul>
         </section>
 
@@ -96,15 +108,38 @@
 
         <section id="main-screen">
             <h2>Tela Principal</h2>
+
+            <h3>Layout da Tela</h3>
             <ul>
-                <li><strong>Canto Superior Esquerdo:</strong> Data e hora</li>
-                <li><strong>Canto Inferior Esquerdo:</strong> Coordenadas GPS e direção</li>
-                <li><strong>Canto Inferior Direito:</strong> Velocidade (mph ou km/h)</li>
-                <li><strong>Centro:</strong> Pré-visualização da câmera e indicador de gravação</li>
-                <li><strong>Botão Flutuante:</strong> Toque no vermelho para iniciar, branco para parar gravação manual</li>
+                <li><strong>Superior Esquerdo:</strong> Data e hora atuais (formato configurável nas configurações)</li>
+                <li><strong>Superior Direito:</strong> Botão de configurações + indicador de status de upload</li>
+                <li><strong>Inferior Esquerdo:</strong> Coordenadas GPS, direção da bússola e status de gravação</li>
+                <li><strong>Inferior Direito:</strong> Velocidade atual (mph ou km/h, configurável)</li>
+                <li><strong>Centro:</strong> Visualização ao vivo da câmera</li>
+                <li><strong>Centro Direito:</strong> Botão de gravação manual (FAB)</li>
             </ul>
+
+            <h3>Indicadores de Status</h3>
+            <ul>
+                <li><strong>REC (Caixa Vermelha):</strong> Gravando vídeo atualmente</li>
+                <li><strong>AUTO (Caixa Verde):</strong> Buffer do modo AUTO está ativo (aguardando impacto)</li>
+                <li><strong>Botão de Gravação Manual:</strong>
+                    <ul>
+                        <li>Círculo vermelho (⏺) = Não está gravando, toque para iniciar</li>
+                        <li>Quadrado branco (⏹) = Gravando, toque para parar</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Indicadores de Upload (Superior Direito)</h3>
+            <ul>
+                <li><strong>Ícone de upload verde (⏫):</strong> Uploads ativos em andamento (mostra contagem)</li>
+                <li><strong>Ícone de pausa laranja (⏸):</strong> Uploads pausados (mostra contagem, toque para abrir o Visualizador de Fila)</li>
+                <li><strong>Ícone de aviso vermelho (⚠️):</strong> Erros de upload (mostra contagem, toque para ver erros)</li>
+            </ul>
+
             <div class="alert alert-warning">
-                <p><strong>Aviso:</strong> Se aparecer "EMULADOR – Gravação de vídeo desativada", você está em um dispositivo virtual. Use um celular real para gravar.</p>
+                <p><strong>Nota:</strong> Se você ver "EMULADOR – Gravação de vídeo desativada", você está rodando em um emulador Android. A gravação de vídeo requer um dispositivo físico com câmera.</p>
             </div>
         </section>
 
@@ -114,21 +149,54 @@
             <h2>Modos de Gravação</h2>
 
             <h3>1. AUTO (Detecção de Impacto)</h3>
-            <p>Grava continuamente em pequenos loops, salvando apenas os últimos dois minutos. Quando um impacto (1.5G–3.0G) é detectado, o DashCam preserva:</p>
+            <p>Perfeito para dirigir no dia a dia — economiza armazenamento mantendo apenas os momentos importantes.</p>
             <ul>
-                <li>Dois minutos antes do impacto</li>
-                <li>Dez segundos após</li>
-                <li>Todos os dados de telemetria (GPS + sensores)</li>
+                <li>Grava segmentos contínuos de 1 minuto em um buffer circular</li>
+                <li>Mantém apenas os últimos 2 minutos na memória (30+ segundos garantidos pré-impacto)</li>
+                <li>Quando o acelerômetro detecta impacto, o DashCam:
+                    <ul>
+                        <li>Preserva o buffer de 2 minutos (antes do impacto)</li>
+                        <li>Grava 10 segundos adicionais (depois do impacto)</li>
+                        <li>Salva a gravação completa com todos os dados de telemetria</li>
+                    </ul>
+                </li>
+                <li><strong>Sensibilidade de Impacto:</strong> ALTA (1.5G), MÉDIA (2.0G, padrão), BAIXA (3.0G)</li>
+                <li><strong>Nome do arquivo:</strong> <code>DashCam-20250115-143022-Impact.mp4</code></li>
+                <li><strong>Comportamento de energia:</strong> Ignora eventos de energia (responde apenas a impactos)</li>
             </ul>
 
-            <h3>2. POR VIAGEM</h3>
-            <p>Inicia quando a ignição liga, para quando desliga. Salva cada viagem como um arquivo único com logs sincronizados.</p>
+            <h3>2. POR_VIAGEM</h3>
+            <p>Uma gravação contínua por ciclo de energia — ideal para documentação completa da viagem.</p>
+            <ul>
+                <li>Inicia automaticamente quando a energia é conectada (ignição ligada)</li>
+                <li>Para quando a energia é desconectada (ignição desligada)</li>
+                <li>Atraso de debounce configurável (0-60 segundos, padrão 10s) evita paradas durante flutuações breves de energia</li>
+                <li>Numeração automática de viagem: verifica arquivos existentes para evitar duplicatas</li>
+                <li><strong>Nome do arquivo:</strong> <code>DashCam-20250115-Trip01.mp4</code></li>
+            </ul>
 
             <h3>3. Loop Temporizado (5/10/30 minutos)</h3>
-            <p>Divide gravações em arquivos rotativos menores para facilitar upload e gerenciamento.</p>
+            <p>Divide gravações em segmentos de duração fixa para facilitar o gerenciamento e upload.</p>
+            <ul>
+                <li>Cria novo segmento a cada 5, 10 ou 30 minutos</li>
+                <li>Alinha aos limites do relógio (ex: modo 10 min: :00, :10, :20, :30, :40, :50)</li>
+                <li>Reinicia automaticamente o próximo segmento até a energia ser desconectada</li>
+                <li>Ideal para equilibrar tamanho de arquivo com conveniência de upload</li>
+                <li><strong>Nome do arquivo:</strong> <code>DashCam-20250115-1430.mp4</code> (arredondado para o limite do segmento)</li>
+            </ul>
 
             <h3>4. Manual</h3>
-            <p>Toque no botão vermelho para iniciar ou parar a gravação a qualquer momento.</p>
+            <p>Controle completo — grave quando quiser.</p>
+            <ul>
+                <li>Toque no botão de círculo vermelho para iniciar a gravação</li>
+                <li>Toque no botão de quadrado branco para parar a gravação</li>
+                <li>Disponível independentemente do estado de energia ou outras configurações</li>
+                <li>Independente dos modos de gravação automática</li>
+            </ul>
+
+            <div class="alert alert-tip">
+                <p><strong>Dica:</strong> Você pode usar a gravação Manual a qualquer momento, mesmo enquanto o modo AUTO está ativo em segundo plano.</p>
+            </div>
         </section>
 
         <hr>
@@ -136,18 +204,76 @@
         <section id="settings">
             <h2>Visão Geral das Configurações</h2>
 
-            <h3>Exibição</h3>
+            <h3>Configurações de Exibição</h3>
             <ul>
                 <li><strong>Unidades de Velocidade:</strong> mph ou km/h</li>
-                <li><strong>Qualidade de Vídeo:</strong> 720p, 1080p (padrão), 4K</li>
-                <li><strong>Formato de Data/Hora:</strong> Personalização regional</li>
-                <li><strong>Manter Tela Ligada:</strong> Evita desligamento durante gravação</li>
+                <li><strong>Formato de Data:</strong> MM/DD/AAAA, DD/MM/AAAA ou AAAA-MM-DD</li>
+                <li><strong>Formato de Hora:</strong> 12 horas ou 24 horas</li>
+                <li><strong>Manter Tela Ligada:</strong> Evita timeout da tela durante a gravação</li>
             </ul>
 
-            <h3>Gravação</h3>
+            <h3>Configurações de Vídeo</h3>
             <ul>
-                <li><strong>Modo:</strong> AUTO, POR VIAGEM, 5/10/30 min</li>
-                <li><strong>Sensibilidade de Impacto:</strong> Baixa (3.0G), Média (2.0G padrão), Alta (1.5G)</li>
+                <li><strong>Qualidade de Vídeo:</strong>
+                    <ul>
+                        <li>720p (50 MB/min) — Viagens longas, armazenamento limitado</li>
+                        <li>1080p (80 MB/min, padrão) — Qualidade equilibrada</li>
+                        <li>2160p/4K (200 MB/min) — Detalhes máximos, requer armazenamento grande</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Configurações de Gravação</h3>
+            <ul>
+                <li><strong>Modo de Gravação:</strong> AUTO, POR_VIAGEM, 5MIN, 10MIN, 30MIN</li>
+                <li><strong>Sensibilidade de Impacto:</strong> ALTA (1.5G), MÉDIA (2.0G, padrão), BAIXA (3.0G)
+                    <br><em>Visível apenas no modo AUTO</em>
+                </li>
+                <li><strong>Local de Armazenamento:</strong> INTERNO ou EXTERNO (cartão SD/USB)</li>
+                <li><strong>Selecionar Pasta Personalizada:</strong> Escolher caminho de armazenamento externo (seletor de pasta SAF)</li>
+            </ul>
+
+            <h3>Configurações de Upload</h3>
+            <ul>
+                <li><strong>Ativar Auto-Upload:</strong> Alternar uploads automáticos após gravação</li>
+                <li><strong>Permitir Conexões Limitadas:</strong> Ativar uploads por dados de celular (padrão: apenas Wi-Fi)</li>
+                <li><strong>Excluir Após Upload:</strong> Remover automaticamente arquivos locais após upload bem-sucedido</li>
+                <li><strong>Visualizador de Fila de Upload:</strong> Monitorar e gerenciar fila de upload</li>
+                <li><strong>Destino de Upload:</strong> SMB, Google Drive ou OneDrive</li>
+                <li><strong>Configuração de Destino:</strong> Veja seções detalhadas abaixo para cada tipo</li>
+            </ul>
+
+            <h3>Gerenciamento de Armazenamento</h3>
+            <ul>
+                <li><strong>Gerenciar Armazenamento Automaticamente:</strong> Excluir automaticamente as gravações mais antigas quando o armazenamento estiver baixo (padrão: ativado)</li>
+                <li><strong>Espaço Livre Desejado:</strong> Limite configurável de 1-20 GB (padrão: 5 GB)
+                    <ul>
+                        <li>Nível de AVISO: Abaixo de 3 GB livres</li>
+                        <li>Nível CRÍTICO: Abaixo de 2 GB livres</li>
+                    </ul>
+                </li>
+                <li><strong>Status em Tempo Real:</strong> Exibição do espaço livre atual com avisos codificados por cores</li>
+            </ul>
+
+            <h3>Gerenciamento de Energia</h3>
+            <ul>
+                <li><strong>Debounce de Desconexão de Energia:</strong> Atraso antes de parar ao perder energia (0-60 segundos, padrão 10s)
+                    <br><em>Evita paradas de gravação durante flutuações breves de energia</em>
+                </li>
+            </ul>
+
+            <h3>Configurações do Sistema</h3>
+            <ul>
+                <li><strong>Status de Otimização de Bateria:</strong> Mostra se o app está isento de otimização de bateria</li>
+                <li><strong>Abrir Configurações de Bateria:</strong> Link direto para configurações de otimização de bateria do Android</li>
+            </ul>
+
+            <h3>Jurídico e Documentação</h3>
+            <ul>
+                <li>Manual do Usuário (este documento)</li>
+                <li>Contrato de Licença de Usuário Final (EULA)</li>
+                <li>Licença de Software</li>
+                <li>Política de Privacidade</li>
             </ul>
         </section>
 
@@ -158,13 +284,27 @@
 
             <h3>Local Padrão</h3>
             <code>/Android/data/com.dashcam.app/files/DashCam/</code>
+            <p>Este é o armazenamento específico do app, acessível sem permissões especiais no Android 10+.</p>
 
             <h3>Armazenamento Externo ou Cartão SD</h3>
             <ol>
-                <li>Vá em <strong>Configurações → Armazenamento</strong>.</li>
+                <li>Vá para <strong>Configurações → Configurações de Gravação → Local de Armazenamento</strong>.</li>
                 <li>Escolha <strong>EXTERNO</strong>.</li>
-                <li>Toque em <strong>Selecionar Pasta Personalizada</strong> e escolha o caminho do SD ou USB.</li>
+                <li>Toque em <strong>Selecionar Pasta Personalizada</strong> e escolha o caminho do seu cartão SD ou armazenamento USB.</li>
+                <li>Conceda permissão quando solicitado (Storage Access Framework).</li>
             </ol>
+            <div class="alert alert-tip">
+                <p><strong>Dica:</strong> O armazenamento externo é ideal para cartões SD de grande capacidade ou drives USB. Certifique-se de que o dispositivo de armazenamento permaneça conectado durante a gravação.</p>
+            </div>
+
+            <h3>Formatos de Arquivo e Saída</h3>
+            <p>Cada gravação cria <strong>quatro arquivos sincronizados</strong>:</p>
+            <ul>
+                <li><strong>.mp4</strong> — Vídeo H.264 com áudio (30 fps)</li>
+                <li><strong>.srt</strong> — Legendas SubRip com GPS, velocidade, data/hora (intervalos de 1 segundo)</li>
+                <li><strong>.csv</strong> — Dados de sensor: acelerômetro, giroscópio, magnetômetro, luz, pressão, proximidade (amostragem de 10 Hz)</li>
+                <li><strong>.gpx</strong> — Trilha GPS no formato GPX 1.1 XML (compatível com software de mapeamento)</li>
+            </ul>
 
             <h3>Tamanhos de Arquivo (Aproximado)</h3>
             <table>
@@ -172,6 +312,7 @@
                     <tr>
                         <th>Qualidade</th>
                         <th>MB/min</th>
+                        <th>Gravação de 1 hora</th>
                         <th>Uso Recomendado</th>
                     </tr>
                 </thead>
@@ -179,22 +320,40 @@
                     <tr>
                         <td>720p</td>
                         <td>50</td>
-                        <td>Viagens longas, pouco espaço</td>
+                        <td>~3 GB</td>
+                        <td>Viagens longas, armazenamento limitado</td>
                     </tr>
                     <tr>
                         <td>1080p</td>
                         <td>80</td>
+                        <td>~4.8 GB</td>
                         <td>Qualidade equilibrada (padrão)</td>
                     </tr>
                     <tr>
-                        <td>4K</td>
+                        <td>2160p/4K</td>
                         <td>200</td>
-                        <td>Alta definição, muito espaço</td>
+                        <td>~12 GB</td>
+                        <td>Detalhes máximos, armazenamento grande</td>
+                    </tr>
+                    <tr>
+                        <td>Telemetria</td>
+                        <td>&lt;0.2</td>
+                        <td>&lt;12 MB</td>
+                        <td>Todos os modos (insignificante)</td>
                     </tr>
                 </tbody>
             </table>
-            <div class="alert alert-tip">
-                <p><strong>Dica:</strong> Logs de telemetria (.srt, .csv, .gpx) ficam abaixo de 0,2 MB/min juntos.</p>
+
+            <h3>Gerenciamento Automático de Armazenamento</h3>
+            <p>Quando <strong>Gerenciar Armazenamento Automaticamente</strong> está ativado (padrão), o DashCam exclui automaticamente as gravações mais antigas quando o espaço livre cai abaixo do seu limite configurado.</p>
+            <ul>
+                <li><strong>Limite padrão:</strong> 5 GB de espaço livre</li>
+                <li><strong>Faixa configurável:</strong> 1-20 GB</li>
+                <li><strong>Comportamento de exclusão:</strong> Exclui conjuntos completos de gravação (todos os 4 arquivos juntos), mais antigos primeiro</li>
+                <li><strong>Níveis de aviso:</strong> Alertas visuais quando abaixo de 3 GB (AVISO) ou 2 GB (CRÍTICO)</li>
+            </ul>
+            <div class="alert alert-warning">
+                <p><strong>Importante:</strong> Se você desativar o gerenciamento automático, monitore o armazenamento manualmente para evitar falhas de gravação.</p>
             </div>
         </section>
 
@@ -202,52 +361,252 @@
 
         <section id="uploads">
             <h2>Configuração de Upload</h2>
-            <p>O DashCam suporta uploads automáticos via Wi-Fi para <strong>compartilhamentos SMB/CIFS</strong>, <strong>Google Drive</strong> ou <strong>OneDrive</strong>.</p>
+            <p>O DashCam suporta uploads automáticos para <strong>pasta compartilhada do Windows <small>(SMB/CIFS)</small></strong>, <strong>Google Drive</strong> e <strong>OneDrive</strong>. O sistema de upload baseado em fila possui tentativa automática, processamento em segundo plano e monitoramento em tempo real.</p>
 
-            <h3>Configuração SMB</h3>
+            <h3>Gatilhos de Upload</h3>
+            <p>Os uploads podem ser acionados de três maneiras:</p>
             <ol>
-                <li><strong>Ative Uploads</strong> nas Configurações.</li>
-                <li><strong>Defina o Momento do Upload:</strong> Manual, Durante Gravação ou Após Gravação.</li>
-                <li><strong>Política de Rede:</strong> Apenas Wi-Fi (padrão) ou Permitir Dados.</li>
-                <li><strong>Insira os Detalhes do Servidor:</strong>
+                <li><strong>Automático (Após Gravação):</strong> Quando o auto-upload está ativado, as gravações fazem upload imediatamente após a conclusão</li>
+                <li><strong>Enfileirar Todos Manualmente:</strong> Mude de MANUAL para modo auto-upload para enfileirar todas as gravações existentes</li>
+                <li><strong>Tentativa em Segundo Plano:</strong> Uploads falhados tentam automaticamente com backoff exponencial (30s, 60s, 120s, 240s, 480s)</li>
+            </ol>
+
+            <h3>Requisitos de Rede</h3>
+            <ul>
+                <li><strong>Wi-Fi Recomendado:</strong> Por padrão, os uploads ocorrem apenas em redes Wi-Fi</li>
+                <li><strong>Permitir Conexões Limitadas:</strong> Ative esta configuração para permitir uploads por dados de celular (pode incorrer em cobranças de dados)</li>
+                <li><strong>Conexão Ativa:</strong> O dispositivo deve ter conectividade com a internet durante o upload</li>
+            </ul>
+
+            <h3>Visualizador de Fila de Upload</h3>
+            <p>Acesse o Visualizador de Fila em <strong>Configurações → Configurações de Upload → Visualizador de Fila de Upload</strong> para:</p>
+            <ul>
+                <li><strong>Monitorar Progresso:</strong> Status de upload em tempo real com barras de progresso</li>
+                <li><strong>Pausar/Retomar:</strong> Controlar processamento de upload (estado persiste entre reinicializações do app)</li>
+                <li><strong>Tentar Novamente Erros:</strong> Tentar manualmente uploads falhados</li>
+                <li><strong>Ver Histórico:</strong> Ver gravações previamente enviadas</li>
+                <li><strong>Reenviar:</strong> Re-enviar arquivos previamente bem-sucedidos se necessário</li>
+                <li><strong>Limpar Fila:</strong> Remover todos os itens enfileirados e reescanear armazenamento</li>
+            </ul>
+
+            <h3>Estados da Fila</h3>
+            <ul>
+                <li><strong>IDLE:</strong> Enfileirado, aguardando para enviar</li>
+                <li><strong>UPLOADING:</strong> Atualmente transferindo</li>
+                <li><strong>ERROR:</strong> Falhou (para a fila, tentativa manual necessária)</li>
+                <li><strong>DONE:</strong> Enviado com sucesso (mantido no histórico)</li>
+            </ul>
+
+            <hr>
+
+            <h3>Configuração de Pasta Compartilhada do Windows <small>(SMB/CIFS)</small></h3>
+            <p>Envie gravações para seu computador doméstico, NAS ou servidor Windows.</p>
+
+            <h4>Passos de Configuração</h4>
+            <ol>
+                <li>Nas Configurações, defina <strong>Tipo de Destino de Upload</strong> como <strong>Pasta de Rede</strong></li>
+                <li>Configure os detalhes de conexão:
                     <ul>
-                        <li><strong>Host:</strong> Nome do computador (NetBIOS) ou IP.</li>
-                        <li><strong>Compartilhamento:</strong> Nome da pasta, ex: <code>dashcam</code>.</li>
-                        <li><strong>Usuário / Senha:</strong> Credenciais de conta local do Windows.</li>
+                        <li><strong>Host:</strong> Nome do host Windows (ex: <code>MEUPC</code>) ou endereço IP (ex: <code>192.168.1.100</code>)</li>
+                        <li><strong>Nome do Compartilhamento:</strong> Nome do compartilhamento SMB (ex: <code>dashcam</code>)</li>
+                        <li><strong>Caminho:</strong> Subpasta opcional dentro do compartilhamento (ex: <code>gravacoes/2025</code>)</li>
+                        <li><strong>Nome de Usuário:</strong> Nome de usuário da conta local do Windows (opcional para acesso de convidado)</li>
+                        <li><strong>Senha:</strong> Senha da conta (criptografada via Android Keystore)</li>
                     </ul>
                 </li>
+                <li><strong>Restrições de Rede Wi-Fi:</strong> Opcionalmente restringir uploads a SSIDs Wi-Fi específicos (separados por vírgula)</li>
+                <li>Ative <strong>Auto-Upload</strong> nas Configurações</li>
             </ol>
 
-            <h3>Resolução de Nome (Redes Windows)</h3>
-            <p>O DashCam suporta <strong>resolução NetBIOS</strong>, permitindo usar nomes de computadores Windows em vez de IPs (ex: <code>MEUPC</code>). Certifique-se de que ambos os dispositivos estejam na mesma rede Wi-Fi e que a <strong>Descoberta de Rede</strong> esteja ativada no Windows.</p>
-            <blockquote>Usuários de macOS ou Linux podem precisar conectar usando o IP.</blockquote>
+            <h4>Resolução de Nome de Host NetBIOS</h4>
+            <p>O DashCam suporta <strong>resolução de nome NetBIOS</strong>, permitindo que você use nomes de computador Windows ao invés de endereços IP.</p>
+            <ul>
+                <li><strong>Requisitos:</strong> Ambos os dispositivos na mesma rede Wi-Fi, Descoberta de Rede do Windows habilitada</li>
+                <li><strong>Exemplo:</strong> Use <code>DESKTOP-ABC123</code> ao invés de <code>192.168.1.100</code></li>
+                <li><strong>Fallback:</strong> Se o nome do host falhar, use o endereço IP (encontre via <code>ipconfig</code> no Prompt de Comando)</li>
+            </ul>
+            <blockquote><em>Nota: NetBIOS funciona principalmente com redes Windows. Usuários de macOS/Linux devem usar endereços IP.</em></blockquote>
 
-            <h3>Por que usar uma Conta Local do Windows</h3>
-            <p>O Windows 10+ não suporta mais compartilhamentos de convidado. Crie um <strong>usuário local</strong> dedicado com senha:</p>
+            <h4>Criando uma Conta Local do Windows</h4>
+            <p>Windows 10+ requer acesso autenticado (sem compartilhamentos de convidado):</p>
             <ol>
-                <li><strong>Win + I → Contas → Família e outros usuários</strong>.</li>
-                <li>Selecione <strong>Adicionar conta → Adicionar usuário sem conta Microsoft</strong>.</li>
-                <li>Crie o nome de usuário (ex: <code>dashcam_user</code>) e senha.</li>
-                <li>Dê permissões de <strong>Leitura/Escrita</strong> nas abas <strong>Compartilhamento</strong> e <strong>Segurança</strong>.</li>
+                <li>Pressione <strong>Win + I</strong> → <strong>Contas</strong> → <strong>Família e outros usuários</strong></li>
+                <li>Clique em <strong>Adicionar outra pessoa a este PC</strong></li>
+                <li>Selecione <strong>Não tenho as informações de entrada desta pessoa</strong></li>
+                <li>Selecione <strong>Adicionar um usuário sem uma conta Microsoft</strong></li>
+                <li>Crie nome de usuário (ex: <code>dashcam</code>) e senha</li>
+                <li>Clique com o botão direito na pasta compartilhada → <strong>Propriedades</strong> → aba <strong>Compartilhamento</strong> → <strong>Compartilhar</strong></li>
+                <li>Adicione o novo usuário com permissões de <strong>Leitura/Gravação</strong></li>
+                <li>Também verifique a aba <strong>Segurança</strong> e conceda permissões de Leitura/Gravação lá</li>
             </ol>
-            <div class="alert alert-tip">
-                <p><strong>Dica:</strong> Descubra o IP do PC pelo Prompt de Comando → <code>ipconfig</code> → Endereço IPv4.</p>
+
+            <h4>Restrições de SSID Wi-Fi (Apenas SMB)</h4>
+            <p>Evite uploads em Wi-Fi público restringindo a redes específicas:</p>
+            <ul>
+                <li><strong>Configuração:</strong> Fazer Upload Apenas em Redes (SSIDs separados por vírgula)</li>
+                <li><strong>Exemplo:</strong> <code>WiFiCasa,Escritorio5G</code></li>
+                <li><strong>Comportamento:</strong> Se SSIDs configurados, uploads ocorrem apenas quando conectado às redes listadas</li>
+                <li><strong>Auto-adicionar:</strong> O app adiciona automaticamente o SSID atual ao configurar SMB pela primeira vez</li>
+                <li><strong>Em Branco = Qualquer Rede:</strong> Deixe vazio para permitir uploads em qualquer Wi-Fi</li>
+            </ul>
+            <div class="alert alert-warning">
+                <p><strong>Nota:</strong> Restrições de SSID se aplicam <strong>apenas a destinos SMB</strong>. Uploads para Google Drive e OneDrive funcionam em qualquer rede (serviços baseados em internet).</p>
             </div>
 
-            <h3>Uploads em Nuvem</h3>
-            <p>O DashCam também pode fazer upload direto para a nuvem.</p>
+            <hr>
+
+            <h3>Configuração do Google Drive</h3>
+            <p>Envie gravações diretamente para sua conta Google Drive.</p>
+
+            <h4>Passos de Configuração</h4>
+            <ol>
+                <li>Nas Configurações, defina <strong>Tipo de Destino de Upload</strong> como <strong>Google Drive</strong></li>
+                <li>Toque em <strong>Conectar Conta Google</strong></li>
+                <li>Selecione sua conta Google no seletor de conta nativo</li>
+                <li>Autorize o DashCam a acessar o Google Drive (permissão Files.ReadWrite)</li>
+                <li>Configure a estrutura de pastas:
+                    <ul>
+                        <li><strong>Pasta Raiz:</strong> Nome da pasta principal (ex: <code>DashCam</code>) - criada automaticamente se não existir</li>
+                        <li><strong>Subpasta:</strong> Caminho de subpasta opcional (ex: <code>2025/Janeiro</code>)</li>
+                    </ul>
+                </li>
+                <li>Ative <strong>Auto-Upload</strong> nas Configurações</li>
+            </ol>
+
+            <h4>Métodos de Upload</h4>
             <ul>
-                <li><strong>Google Drive:</strong> Totalmente suportado. Autorize sua conta Google uma vez nas configurações.</li>
-                <li><strong>OneDrive:</strong> Totalmente suportado. Faça login na conta Microsoft e selecione a pasta de destino.</li>
-                <li><strong>Dropbox:</strong> Planejado para versões futuras se houver demanda.</li>
+                <li><strong>Upload Multipart:</strong> Arquivos menores que 5 MB enviam em uma solicitação</li>
+                <li><strong>Upload Resumível:</strong> Arquivos de 5 MB e maiores enviam em blocos de 5 MB (pode retomar se interrompido)</li>
             </ul>
-            <p>Uploads são retomados automaticamente se interrompidos, e você pode optar por apagar arquivos locais após upload bem-sucedido.</p>
+
+            <h4>Autenticação e Segurança</h4>
+            <ul>
+                <li><strong>OAuth 2.0:</strong> Autenticação segura padrão da indústria</li>
+                <li><strong>Armazenamento de Token:</strong> Criptografado via Android Keystore (com backup de hardware quando disponível)</li>
+                <li><strong>Auto-Renovação:</strong> Tokens renovam automaticamente 5 minutos antes de expirar</li>
+                <li><strong>Desconectar:</strong> Toque em "Desconectar Conta Google" para revogar acesso e limpar tokens</li>
+            </ul>
+
+            <hr>
+
+            <h3>Configuração do OneDrive</h3>
+            <p>Envie gravações para sua conta Microsoft OneDrive.</p>
+
+            <h4>Passos de Configuração</h4>
+            <ol>
+                <li>Nas Configurações, defina <strong>Tipo de Destino de Upload</strong> como <strong>OneDrive</strong></li>
+                <li>Toque em <strong>Conectar Conta Microsoft</strong></li>
+                <li>Faça login via fluxo web OAuth 2.0 da Microsoft (abre em WebView)</li>
+                <li>Autorize o DashCam a acessar o OneDrive (permissão Files.ReadWrite)</li>
+                <li>Configure a estrutura de pastas:
+                    <ul>
+                        <li><strong>Pasta Raiz:</strong> Nome da pasta principal (ex: <code>DashCam</code>) - criada automaticamente se não existir</li>
+                        <li><strong>Subpasta:</strong> Caminho de subpasta opcional (ex: <code>2025/Janeiro</code>)</li>
+                    </ul>
+                </li>
+                <li>Ative <strong>Auto-Upload</strong> nas Configurações</li>
+            </ol>
+
+            <h4>Métodos de Upload</h4>
+            <ul>
+                <li><strong>Upload Simples:</strong> Arquivos menores que 4 MB enviam em uma solicitação</li>
+                <li><strong>Sessão Resumível:</strong> Arquivos de 4 MB e maiores usam sessões de upload (pode retomar se interrompido)</li>
+            </ul>
+
+            <h4>Autenticação e Segurança</h4>
+            <ul>
+                <li><strong>OAuth 2.0:</strong> Autenticação Microsoft Graph API v1.0</li>
+                <li><strong>Armazenamento de Token:</strong> Criptografado via Android Keystore (com backup de hardware quando disponível)</li>
+                <li><strong>Auto-Renovação:</strong> Tokens renovam automaticamente 5 minutos antes de expirar</li>
+                <li><strong>Desconectar:</strong> Toque em "Desconectar Conta Microsoft" para revogar acesso e limpar tokens</li>
+            </ul>
+
+            <hr>
+
+            <h3>Configurações Gerais de Upload</h3>
+
+            <h4>Excluir Após Upload</h4>
+            <p>Quando ativado, o DashCam exclui automaticamente os arquivos locais após upload bem-sucedido. Isso ajuda a gerenciar o armazenamento automaticamente.</p>
+            <ul>
+                <li><strong>Segurança:</strong> Arquivos excluídos apenas após upload bem-sucedido confirmado</li>
+                <li><strong>Telemetria:</strong> Todos os 4 arquivos excluídos juntos (mp4, srt, csv, gpx)</li>
+                <li><strong>Rastreamento:</strong> Status de upload persiste no DataStore</li>
+            </ul>
+
+            <h4>Mecanismo de Tentativa</h4>
+            <p>Uploads falhados tentam automaticamente via Android WorkManager:</p>
+            <ul>
+                <li><strong>Backoff Exponencial:</strong> 30s, 60s, 120s, 240s, 480s (8 minutos máx)</li>
+                <li><strong>Tentativas Máximas:</strong> 5 tentativas antes de desistir</li>
+                <li><strong>Restrições de Rede:</strong> Respeita política de limitado/apenas-Wi-Fi</li>
+                <li><strong>Processamento em Segundo Plano:</strong> Funciona mesmo quando o app está fechado</li>
+            </ul>
+
+            <h4>Falhas Comuns de Upload</h4>
+            <ul>
+                <li><strong>Rede Indisponível:</strong> Fila pausada, tenta novamente quando rede disponível</li>
+                <li><strong>SSID Incompatível (SMB):</strong> Não está na rede Wi-Fi permitida</li>
+                <li><strong>Falha de Autenticação:</strong> Token OAuth expirado ou credenciais inválidas</li>
+                <li><strong>Destino Indisponível:</strong> Compartilhamento SMB offline ou serviço em nuvem fora do ar</li>
+                <li><strong>Configuração Inválida:</strong> Configurações necessárias faltando (host, compartilhamento, conta)</li>
+            </ul>
+
+            <div class="alert alert-tip">
+                <p><strong>Dica:</strong> Monitore o status de upload pelo indicador superior direito na tela principal. Toque para abrir o Visualizador de Fila para informações detalhadas.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="playback">
+            <h2>Visualizando Gravações</h2>
+
+            <h3>Reprodução no App</h3>
+            <p>Toque em qualquer gravação na tela de Gravações para visualizar com sobreposições de telemetria sincronizadas.</p>
+            <ul>
+                <li><strong>Reprodução de Vídeo:</strong> Player integrado com controles padrão (play/pause, busca, volume)</li>
+                <li><strong>Legendas SRT:</strong> Sobreposições de GPS, velocidade e timestamp exibidas automaticamente (posicionadas)</li>
+                <li><strong>Sincronização de Linha do Tempo:</strong> Dados de telemetria sincronizados com reprodução de vídeo</li>
+            </ul>
+
+            <h3>Reprodução Externa</h3>
+            <p>Todos os arquivos estão em formatos padrão compatíveis com software externo:</p>
+            <ul>
+                <li><strong>Vídeo (.mp4):</strong> Reproduza no VLC, Windows Media Player, QuickTime, etc.</li>
+                <li><strong>Legendas (.srt):</strong> Carregue junto com o vídeo na maioria dos players de mídia
+                    <ul>
+                        <li>VLC: Arraste o arquivo .srt para o vídeo ou coloque na mesma pasta com nome correspondente</li>
+                        <li>Mostra coordenadas GPS, velocidade, data/hora como sobreposições posicionadas</li>
+                    </ul>
+                </li>
+                <li><strong>Dados de Sensor (.csv):</strong> Abra no Excel, Google Sheets, Python/R para análise
+                    <ul>
+                        <li>Colunas: Timestamp, Accel X/Y/Z, Gyro X/Y/Z, Mag X/Y/Z, Luz, Pressão, Proximidade</li>
+                        <li>Amostragem de 10 Hz (intervalos de 100ms)</li>
+                    </ul>
+                </li>
+                <li><strong>Trilha GPS (.gpx):</strong> Importe para software de mapeamento
+                    <ul>
+                        <li>Compatível com: Google Earth, Garmin BaseCamp, GPX Viewer, etc.</li>
+                        <li>Formato GPX 1.1 XML com pontos de trilha e timestamps</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Acessando Arquivos</h3>
+            <ul>
+                <li><strong>Armazenamento Interno:</strong> Use um app gerenciador de arquivos ou conecte o telefone via USB (modo MTP)</li>
+                <li><strong>Armazenamento Externo:</strong> Remova o cartão SD e insira no computador, ou use conexão USB</li>
+                <li><strong>Caminho:</strong> <code>/Android/data/com.dashcam.app/files/DashCam/</code> (interno) ou seu caminho personalizado configurado</li>
+            </ul>
         </section>
 
         <hr>
 
         <section id="troubleshooting">
-            <h2>Resolução de Problemas</h2>
+            <h2>Solução de Problemas</h2>
+
+            <h3>Problemas Comuns</h3>
             <table>
                 <thead>
                     <tr>
@@ -257,78 +616,208 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Sem vídeo</td>
-                        <td>Conceda permissão de câmera; reinicie o app.</td>
+                        <td>Sem visualização de vídeo</td>
+                        <td>Conceda permissão de câmera em Configurações do Android → Apps → DashCam → Permissões. Reinicie o app.</td>
                     </tr>
                     <tr>
-                        <td>GPS travado</td>
-                        <td>Vá para área externa; certifique-se de que o GPS está ativado.</td>
+                        <td>GPS não adquirindo</td>
+                        <td>Mova para área externa com visão clara do céu. Certifique-se de que a permissão de Localização foi concedida e GPS está ativado nas configurações do Android. Pode levar 30-60s para fix inicial.</td>
                     </tr>
                     <tr>
-                        <td>Impacto não detectado</td>
-                        <td>Ajuste a sensibilidade; fixe melhor o suporte.</td>
+                        <td>Impacto não detectado (modo AUTO)</td>
+                        <td>Ajuste a sensibilidade para ALTA (1.5G) nas configurações. Certifique-se de que o telefone está montado com segurança (montagem solta absorve impactos). Teste com toque suave no suporte.</td>
                     </tr>
                     <tr>
-                        <td>Falha no upload</td>
-                        <td>Confirme credenciais; mesma rede Wi-Fi; habilite porta SMB 445.</td>
+                        <td>Gravação para inesperadamente</td>
+                        <td>Verifique espaço de armazenamento (auto-remoção pode estar excluindo arquivos). Verifique se isenção de otimização de bateria foi concedida. Verifique configuração de debounce de desconexão de energia.</td>
                     </tr>
                     <tr>
-                        <td>Nome do host não encontrado</td>
-                        <td>Verifique descoberta NetBIOS; use IP como alternativa.</td>
+                        <td>App fecha quando a tela desliga</td>
+                        <td>Conceda isenção de otimização de bateria: Configurações → Configurações do Sistema → Abrir Configurações de Bateria → Selecione "Não otimizar" para DashCam.</td>
                     </tr>
                     <tr>
-                        <td>Armazenamento cheio</td>
-                        <td>Reduza a qualidade do vídeo ou ative autoexclusão após upload.</td>
+                        <td>Erros de armazenamento cheio</td>
+                        <td>Ative gerenciar armazenamento automaticamente nas configurações. Aumente o limite de espaço livre desejado. Reduza a qualidade de vídeo. Ative excluir após upload.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Solução de Problemas de Upload</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Problema</th>
+                        <th>Solução Possível</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Falha no upload SMB</td>
+                        <td>Verifique se host/compartilhamento/credenciais estão corretos. Certifique-se de que ambos os dispositivos estão no mesmo Wi-Fi. Verifique restrições de SSID. Habilite porta 445 no Firewall do Windows. Verifique se conta local do Windows tem permissões de Leitura/Gravação.</td>
+                    </tr>
+                    <tr>
+                        <td>Nome do host não encontrado (SMB)</td>
+                        <td>Verifique se Descoberta de Rede do Windows está habilitada. Verifique se NetBIOS está rodando. Use endereço IP como fallback (encontre via <code>ipconfig</code> no Prompt de Comando).</td>
+                    </tr>
+                    <tr>
+                        <td>Falha de autenticação Google Drive</td>
+                        <td>Desconecte e reconecte a conta. Verifique se conta Google está ativa. Verifique conexão com internet. Limpe dados do app se persistir.</td>
+                    </tr>
+                    <tr>
+                        <td>Falha de autenticação OneDrive</td>
+                        <td>Desconecte e reconecte a conta. Verifique se conta Microsoft está ativa. Verifique conexão com internet. Tente navegador diferente se WebView falhar.</td>
+                    </tr>
+                    <tr>
+                        <td>Upload preso na fila</td>
+                        <td>Verifique conectividade de rede. Verifique configurações apenas-Wi-Fi/limitado. Verifique restrições de SSID (SMB). Abra Visualizador de Fila e verifique mensagem de erro. Tente tentativa manual.</td>
+                    </tr>
+                    <tr>
+                        <td>Uploads usam dados de celular</td>
+                        <td>Desative "Permitir Conexões Limitadas" nas Configurações de Upload. Uploads ocorrerão apenas em Wi-Fi.</td>
                     </tr>
                 </tbody>
             </table>
 
             <h3>Dicas de Desempenho</h3>
             <ul>
-                <li>Desative a otimização de bateria do Android para o DashCam.</li>
-                <li>Use um carregador de qualidade (2A+).</li>
-                <li>Evite superaquecimento — luz solar direta pode desligar o aparelho.</li>
+                <li><strong>Otimização de Bateria:</strong> Desative a otimização de bateria do Android para DashCam (Configurações → Configurações do Sistema)</li>
+                <li><strong>Carregador de Qualidade:</strong> Use carregador de 2A+ para garantir energia estável durante gravação e upload</li>
+                <li><strong>Gerenciamento de Calor:</strong> Evite exposição direta à luz solar — superaquecimento pode causar throttling térmico ou desligamento</li>
+                <li><strong>Desempenho de Armazenamento:</strong> Use cartões SD de alta qualidade (Classe 10, UHS-I ou melhor) para armazenamento externo</li>
+                <li><strong>Desempenho de Rede:</strong> Para uploads SMB, use Wi-Fi 5GHz quando disponível (velocidades de transferência mais rápidas)</li>
+                <li><strong>Limpeza de Armazenamento:</strong> Limpe gravações antigas periodicamente manualmente ou ative excluir-após-upload</li>
             </ul>
+
+            <h3>Diagnósticos Avançados</h3>
+            <p>Se os problemas persistirem, verifique o Logcat do Android para mensagens de erro detalhadas:</p>
+            <ol>
+                <li>Ative Opções de Desenvolvedor (Configurações → Sobre o Telefone → Toque 7 vezes no Número da Versão)</li>
+                <li>Ative Depuração USB (Configurações → Opções de Desenvolvedor)</li>
+                <li>Conecte ao computador e execute: <code>adb logcat -s DashCam:*</code></li>
+                <li>Procure por mensagens de erro marcadas com nomes de componentes (VideoRecorder, UploadManager, etc.)</li>
+            </ol>
         </section>
 
         <hr>
 
         <section id="technical">
-            <h2>Notas Técnicas</h2>
+            <h2>Especificações Técnicas</h2>
+
+            <h3>Codificação de Vídeo</h3>
             <ul>
-                <li><strong>Vídeo:</strong> H.264/AVC MP4 @ 30 fps</li>
-                <li><strong>Telemetria:</strong> SRT (GPS/velocidade), CSV (10 Hz sensores), GPX (trajeto)</li>
-                <li><strong>Buffer de Impacto:</strong> Loop de dois minutos, salva +10s após impacto</li>
-                <li><strong>Permissões:</strong> CAMERA, RECORD_AUDIO, ACCESS_FINE_LOCATION, INTERNET, WAKE_LOCK, FOREGROUND_SERVICE</li>
-                <li><strong>Armazenamento de Credenciais:</strong> Criptografado via Android Keystore</li>
+                <li><strong>Codec:</strong> H.264/AVC (container MP4)</li>
+                <li><strong>Taxa de Quadros:</strong> 30 fps (fixo)</li>
+                <li><strong>Resolução:</strong> 1280×720, 1920×1080 ou 3840×2160 (dependente do dispositivo)</li>
+                <li><strong>Orientação:</strong> Paisagem (rotação de 90° para montagem de dashcam)</li>
+                <li><strong>Áudio:</strong> Codec AAC, incluído no MP4</li>
+            </ul>
+
+            <h3>Sistemas de Telemetria</h3>
+            <ul>
+                <li><strong>Provedor GPS:</strong> Localização Fundida do Google Play Services (atualizações de 1 segundo)</li>
+                <li><strong>Formato SRT:</strong> Legendas SubRip com sobreposições posicionadas (superior esquerdo, inferior esquerdo, inferior direito)</li>
+                <li><strong>Amostragem CSV:</strong> 10 Hz (intervalos de 100ms) para acelerômetro, giroscópio, magnetômetro, luz, pressão, proximidade</li>
+                <li><strong>Formato GPX:</strong> GPS Exchange Format 1.1 XML com pontos de trilha e timestamps</li>
+            </ul>
+
+            <h3>Detecção de Impacto</h3>
+            <ul>
+                <li><strong>Algoritmo:</strong> Magnitude do acelerômetro filtrada passa-baixa (alfa=0.8)</li>
+                <li><strong>Limites:</strong> ALTA=1.5G (15 m/s²), MÉDIA=2.0G (20 m/s²), BAIXA=3.0G (30 m/s²)</li>
+                <li><strong>Buffer:</strong> Buffer rotativo de 2 minutos (segmentos de 1 minuto), captura pós-impacto de 10 segundos</li>
+                <li><strong>Taxa de Atualização:</strong> ~20ms (SENSOR_DELAY_GAME)</li>
+            </ul>
+
+            <h3>Arquitetura de Armazenamento</h3>
+            <ul>
+                <li><strong>Interno:</strong> API File direta para diretório específico do app</li>
+                <li><strong>Externo:</strong> Storage Access Framework (SAF) com persistência DocumentTree</li>
+                <li><strong>FileAccessManager:</strong> Camada de abstração unificada para APIs File e DocumentFile</li>
+                <li><strong>Saída de Vídeo:</strong> FileOutputOptions (interno), FileDescriptorOutputOptions (SAF externo)</li>
+            </ul>
+
+            <h3>Arquitetura de Upload</h3>
+            <ul>
+                <li><strong>SMB/CIFS:</strong> Biblioteca jcifs-ng com resolução de nome NetBIOS</li>
+                <li><strong>Google Drive:</strong> Google Sign-In API + Drive REST API v3 (multipart <5MB, resumível ≥5MB)</li>
+                <li><strong>OneDrive:</strong> Microsoft Graph API v1.0 (simples <4MB, sessão resumível ≥4MB)</li>
+                <li><strong>Tentativa:</strong> Android WorkManager com backoff exponencial (máx 5 tentativas)</li>
+                <li><strong>Fila:</strong> Processamento sequencial com rastreamento de progresso baseado em StateFlow</li>
+            </ul>
+
+            <h3>Segurança</h3>
+            <ul>
+                <li><strong>Tokens OAuth:</strong> Criptografados via EncryptedSharedPreferences + Android Keystore</li>
+                <li><strong>Credenciais SMB:</strong> Criptografadas via Android Keystore (com backup de hardware quando disponível)</li>
+                <li><strong>Renovação de Token:</strong> Renovação automática 5 minutos antes de expirar</li>
+                <li><strong>Permissões:</strong> CAMERA, RECORD_AUDIO, ACCESS_FINE_LOCATION, INTERNET, WAKE_LOCK, FOREGROUND_SERVICE, ACCESS_NETWORK_STATE</li>
+            </ul>
+
+            <h3>Framework e Bibliotecas</h3>
+            <ul>
+                <li><strong>UI:</strong> Jetpack Compose (UI declarativa)</li>
+                <li><strong>Câmera:</strong> CameraX (com fallback de seletor de qualidade)</li>
+                <li><strong>Preferências:</strong> DataStore (Preferences + Proto)</li>
+                <li><strong>Concorrência:</strong> Kotlin Coroutines + Flow</li>
+                <li><strong>Reprodução de Mídia:</strong> ExoPlayer</li>
+                <li><strong>Trabalho em Segundo Plano:</strong> WorkManager</li>
+                <li><strong>SMB:</strong> jcifs-ng</li>
+            </ul>
+
+            <h3>Requisitos do Dispositivo</h3>
+            <ul>
+                <li><strong>Android Mínimo:</strong> 8.0 Oreo (API 26)</li>
+                <li><strong>Android Alvo:</strong> 14 (API 34)</li>
+                <li><strong>Câmera:</strong> Câmera traseira necessária (câmera frontal não suportada)</li>
+                <li><strong>Sensores:</strong> GPS, acelerômetro necessários; giroscópio, magnetômetro, luz, pressão, proximidade opcionais</li>
+                <li><strong>Armazenamento:</strong> Mínimo de 8 GB recomendado (16+ GB para gravação prolongada)</li>
             </ul>
         </section>
 
         <hr>
 
         <section id="limitations">
-            <h2>Limitações Conhecidas (Beta)</h2>
+            <h2>Limitações Conhecidas</h2>
+
+            <h3>Limitações Atuais (Beta)</h3>
             <ul>
-                <li>Integração com Dropbox pendente de demanda dos usuários.</li>
-                <li>Viagens muito longas podem exigir grande capacidade de armazenamento.</li>
+                <li><strong>Suporte de Emulador:</strong> Gravação de vídeo desativada em emuladores Android (limitação do CameraX). Modo apenas-telemetria funciona.</li>
+                <li><strong>Compatibilidade MediaMuxer:</strong> Pode falhar em alguns dispositivos no modo AUTO (fallback: salva apenas último segmento)</li>
+                <li><strong>Arquivos PER_TRIP Grandes:</strong> Viagens contínuas extremamente longas (4+ horas em 1080p) podem exceder 20 GB — garanta armazenamento adequado</li>
+                <li><strong>Permissão de Localização Wi-Fi:</strong> Android 10+ requer ACCESS_FINE_LOCATION para acesso SSID (restrições Wi-Fi)</li>
+            </ul>
+
+            <h3>Considerações sobre Microsoft OneDrive</h3>
+            <ul>
+                <li><strong>Expiração do Client Secret:</strong> O client secret da Microsoft expira aproximadamente em outubro de 2026</li>
+                <li><strong>Impacto:</strong> O app exigirá atualização ou implementação de servidor backend antes da expiração</li>
+                <li><strong>Mitigação:</strong> Usuários serão notificados com bastante antecedência via atualização do app</li>
+            </ul>
+
+            <h3>Recursos Planejados</h3>
+            <ul>
+                <li><strong>Gerenciamento Térmico:</strong> Monitoramento de temperatura e throttling de gravação (próxima prioridade)</li>
+                <li><strong>Integração Dropbox:</strong> Pendente de demanda dos usuários</li>
+                <li><strong>Testes Automatizados:</strong> Infraestrutura de teste existe mas testes ainda não implementados</li>
+                <li><strong>Filtragem de Tipo de Arquivo:</strong> UI para modo de upload TELEMETRY_ONLY (arquitetura completa)</li>
             </ul>
         </section>
 
         <hr>
 
         <section id="safety">
-            <h2>Segurança & Responsabilidade</h2>
-            <p>O DashCam auxilia motoristas — <strong>não</strong> substitui a direção segura. Sempre siga as leis locais sobre gravação veicular.</p>
+            <h2>Segurança e Responsabilidade</h2>
+            <p>O DashCam auxilia motoristas — ele <strong>não</strong> é um substituto para direção segura. Sempre siga as leis locais sobre gravação veicular.</p>
         </section>
 
         <hr>
 
         <section id="support">
-            <h2>Suporte & Feedback</h2>
-            <p>Esta é uma <strong>versão beta</strong> — estável para uso diário, com desenvolvimento ativo.</p>
+            <h2>Suporte e Feedback</h2>
+            <p>Esta é uma <strong>versão beta</strong> — estável para uso diário, com desenvolvimento ativo continuando.</p>
             <ul>
-                <li>Relate problemas ou sugestões na página do projeto no GitHub.</li>
-                <li>Inclua modelo do celular, versão do Android e breve descrição do problema.</li>
+                <li>Relate problemas ou sugestões via página do projeto no GitHub.</li>
+                <li>Inclua o modelo do seu telefone, versão do Android e uma breve descrição do problema.</li>
             </ul>
             <p><strong>Obrigado por usar o DashCam. Dirija com segurança — e grave com responsabilidade.</strong></p>
         </section>
