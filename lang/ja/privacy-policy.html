@@ -111,8 +111,62 @@
 
         <hr>
 
+        <section id="crash-reporting">
+            <h2>5. オプションのクラッシュレポート</h2>
+            <div class="alert alert-info">
+                <p><strong>オプトインのみ – デフォルトで無効</strong></p>
+            </div>
+            <p>DashCamは、バグの特定と修正を支援するためのオプションのクラッシュレポート機能を提供しています。この機能は:</p>
+            <ul>
+                <li><strong>デフォルトで無効</strong> – 設定で明示的に有効にする必要があります</li>
+                <li><strong>完全にオプション</strong> – この機能なしでもアプリは完全に機能します</li>
+                <li><strong>透明性</strong> – 設定 → 詳細設定でいつでもオン/オフを切り替えられます</li>
+            </ul>
+
+            <h3>クラッシュレポートが収集するもの（有効な場合）:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>データの種類</th>
+                        <th>目的</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>アプリのクラッシュログ</strong></td>
+                        <td>バグを診断するためのスタックトレースとエラーメッセージ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>デバイス情報</strong></td>
+                        <td>Androidバージョン、デバイスモデル、利用可能なメモリ（技術診断のみ）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>アプリ状態のコンテキスト</strong></td>
+                        <td>クラッシュ発生時の記録モード、使用中の設定</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>クラッシュレポートが収集しないもの:</h3>
+            <ul>
+                <li><strong>個人情報なし</strong> – 名前、メールアドレス、ユーザー識別子は含まれません</li>
+                <li><strong>位置情報なし</strong> – GPS座標は決して含まれません</li>
+                <li><strong>動画や音声なし</strong> – 録画データはデバイスに残ります</li>
+                <li><strong>ファイルパスなし</strong> – ログから機密情報は削除されます</li>
+                <li><strong>OAuthトークンや認証情報なし</strong> – 認証データは決して送信されません</li>
+            </ul>
+
+            <p>クラッシュレポートは、暗号化された接続を介して<strong>Firebase Crashlytics</strong>（Google）に送信され、アプリの安定性向上のためにのみ使用されます。レポートは90日後に自動的に削除されます。</p>
+
+            <div class="alert alert-info">
+                <p><strong>あなたの選択:</strong> クラッシュレポートはバグの迅速な修正に役立ちますが、完全にオプションです。DashCamはプライバシーを尊重し、この機能が無効でも完璧に動作します。</p>
+            </div>
+        </section>
+
+        <hr>
+
         <section id="security">
-            <h2>5. セキュリティ</h2>
+            <h2>6. セキュリティ</h2>
             <ul>
                 <li>すべての機密認証情報（SMBユーザー名やパスワードなど）は、<a href="https://developer.android.com/privacy-and-security/keystore" target="_blank" rel="noopener noreferrer">Android Keystore</a>を使用して暗号化され、安全に保存されます。</li>
                 <li>DashCamは、この情報をデバイス外に保存または送信することはありません。</li>
@@ -123,7 +177,7 @@
         <hr>
 
         <section id="retention">
-            <h2>6. データの保持と削除</h2>
+            <h2>7. データの保持と削除</h2>
             <ul>
                 <li>すべての録画は、ユーザーが削除するか、<strong>アップロード後の自動削除</strong>を有効にするまで、デバイスに残ります。</li>
                 <li>DashCamをアンインストールすると、内部ストレージファイルは削除されますが、他の場所に保存したファイルは削除されません。</li>
@@ -134,7 +188,7 @@
         <hr>
 
         <section id="children">
-            <h2>7. 子供のプライバシー</h2>
+            <h2>8. 子供のプライバシー</h2>
             <p>DashCamは13歳未満の子供を対象としていません。<br>
             当社は、未成年者から意図的に情報を収集または保存することはありません。</p>
         </section>
@@ -142,7 +196,7 @@
         <hr>
 
         <section id="permissions">
-            <h2>8. 権限の説明</h2>
+            <h2>9. 権限の説明</h2>
             <p>DashCamは、これらのAndroid権限を技術的な目的でのみ使用します:</p>
 
             <table>
@@ -184,7 +238,7 @@
         <hr>
 
         <section id="updates">
-            <h2>9. このポリシーの更新</h2>
+            <h2>10. このポリシーの更新</h2>
             <p>DashCamの機能が進化する場合、このプライバシーポリシーは変更される可能性があります。<br>
             更新が行われた場合、改訂版と日付がアプリ内および公式リリースページに公開されます。</p>
         </section>
@@ -192,7 +246,7 @@
         <hr>
 
         <section id="contact">
-            <h2>10. お問い合わせ</h2>
+            <h2>11. お問い合わせ</h2>
             <p>プライバシーまたはデータ取り扱いについてご質問がある場合は、以下までご連絡ください:<br>
             📧 <a href="mailto:support@byteforge.biz">support@byteforge.biz</a></p>
         </section>

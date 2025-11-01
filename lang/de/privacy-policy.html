@@ -111,8 +111,62 @@
 
         <hr>
 
+        <section id="crash-reporting">
+            <h2>5. Optionale Absturzberichte</h2>
+            <div class="alert alert-info">
+                <p><strong>Opt-in – Standardmäßig deaktiviert</strong></p>
+            </div>
+            <p>DashCam bietet optionale Absturzberichte, um Fehler zu identifizieren und zu beheben. Diese Funktion ist:</p>
+            <ul>
+                <li><strong>Standardmäßig deaktiviert</strong> – Sie müssen sie in den Einstellungen explizit aktivieren</li>
+                <li><strong>Völlig optional</strong> – Die App funktioniert vollständig ohne sie</li>
+                <li><strong>Transparent</strong> – Sie können sie jederzeit in Einstellungen → Erweitert ein-/ausschalten</li>
+            </ul>
+
+            <h3>Was Absturzberichte sammeln (falls aktiviert):</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datentyp</th>
+                        <th>Zweck</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>App-Absturzprotokolle</strong></td>
+                        <td>Stack-Traces und Fehlermeldungen zur Fehlerdiagnose</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Geräteinformationen</strong></td>
+                        <td>Android-Version, Gerätemodell, verfügbarer Speicher (nur technische Diagnose)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>App-Status-Kontext</strong></td>
+                        <td>Aufnahmemodus, verwendete Einstellungen beim Absturz</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Was Absturzberichte NICHT sammeln:</h3>
+            <ul>
+                <li><strong>Keine persönlichen Informationen</strong> – Keine Namen, E-Mail-Adressen oder Benutzer-IDs</li>
+                <li><strong>Keine Standortdaten</strong> – GPS-Koordinaten werden niemals einbezogen</li>
+                <li><strong>Keine Video- oder Audioaufnahmen</strong> – Ihre Aufnahmen bleiben auf Ihrem Gerät</li>
+                <li><strong>Keine Dateipfade</strong> – Sensible Informationen werden aus Protokollen entfernt</li>
+                <li><strong>Keine OAuth-Tokens oder Anmeldedaten</strong> – Authentifizierungsdaten werden niemals übertragen</li>
+            </ul>
+
+            <p>Absturzberichte werden an <strong>Firebase Crashlytics</strong> (Google) über eine verschlüsselte Verbindung gesendet und dienen ausschließlich der Verbesserung der App-Stabilität. Berichte werden nach 90 Tagen automatisch gelöscht.</p>
+
+            <div class="alert alert-info">
+                <p><strong>Ihre Wahl:</strong> Absturzberichte helfen uns, Fehler schneller zu beheben, sind aber völlig optional. DashCam respektiert Ihre Privatsphäre und funktioniert perfekt mit deaktivierter Funktion.</p>
+            </div>
+        </section>
+
+        <hr>
+
         <section id="security">
-            <h2>5. Sicherheit</h2>
+            <h2>6. Sicherheit</h2>
             <ul>
                 <li>Alle sensiblen Anmeldedaten (wie SMB-Benutzernamen und -Passwörter) werden verschlüsselt und sicher mit dem <a href="https://developer.android.com/privacy-and-security/keystore" target="_blank" rel="noopener noreferrer">Android Keystore</a> gespeichert.</li>
                 <li>DashCam speichert oder überträgt diese Informationen niemals außerhalb Ihres Geräts.</li>
@@ -123,7 +177,7 @@
         <hr>
 
         <section id="retention">
-            <h2>6. Datenaufbewahrung und -löschung</h2>
+            <h2>7. Datenaufbewahrung und -löschung</h2>
             <ul>
                 <li>Alle Aufnahmen verbleiben auf Ihrem Gerät, bis Sie sie löschen oder <strong>automatisches Löschen nach Upload</strong> aktivieren.</li>
                 <li>Die Deinstallation von DashCam entfernt interne Speicherdateien, aber nicht die, die Sie anderweitig gespeichert haben.</li>
@@ -134,7 +188,7 @@
         <hr>
 
         <section id="children">
-            <h2>7. Datenschutz für Kinder</h2>
+            <h2>8. Datenschutz für Kinder</h2>
             <p>DashCam ist nicht für Kinder unter 13 Jahren bestimmt.<br>
             Wir sammeln oder speichern wissentlich keine Informationen von Minderjährigen.</p>
         </section>
@@ -142,7 +196,7 @@
         <hr>
 
         <section id="permissions">
-            <h2>8. Erklärung der Berechtigungen</h2>
+            <h2>9. Erklärung der Berechtigungen</h2>
             <p>DashCam verwendet diese Android-Berechtigungen nur für ihre technischen Zwecke:</p>
 
             <table>
@@ -184,7 +238,7 @@
         <hr>
 
         <section id="updates">
-            <h2>9. Aktualisierungen dieser Richtlinie</h2>
+            <h2>10. Aktualisierungen dieser Richtlinie</h2>
             <p>Diese Datenschutzrichtlinie kann sich ändern, wenn sich die Funktionen von DashCam weiterentwickeln.<br>
             Wenn Aktualisierungen erfolgen, werden die überarbeitete Version und das Datum in der App und auf unserer offiziellen Release-Seite veröffentlicht.</p>
         </section>
@@ -192,7 +246,7 @@
         <hr>
 
         <section id="contact">
-            <h2>10. Kontakt</h2>
+            <h2>11. Kontakt</h2>
             <p>Wenn Sie Fragen zum Datenschutz oder zur Datenverarbeitung haben, wenden Sie sich bitte an:<br>
             📧 <a href="mailto:support@byteforge.biz">support@byteforge.biz</a></p>
         </section>

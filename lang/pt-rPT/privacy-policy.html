@@ -111,8 +111,62 @@
 
         <hr>
 
+        <section id="crash-reporting">
+            <h2>5. Relatórios de Falhas Opcionais</h2>
+            <div class="alert alert-info">
+                <p><strong>Opt-in apenas – Desativado por padrão</strong></p>
+            </div>
+            <p>O DashCam oferece relatórios de falhas opcionais para ajudar a identificar e corrigir bugs. Este recurso é:</p>
+            <ul>
+                <li><strong>Desativado por padrão</strong> – Deve ativá-lo explicitamente nas Definições</li>
+                <li><strong>Completamente opcional</strong> – A app funciona totalmente sem ele</li>
+                <li><strong>Transparente</strong> – Pode ativá-lo/desativá-lo a qualquer momento em Definições → Avançado</li>
+            </ul>
+
+            <h3>O que os relatórios de falhas recolhem (se ativados):</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Dados</th>
+                        <th>Finalidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Registos de falhas da app</strong></td>
+                        <td>Stack traces e mensagens de erro para diagnosticar bugs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Informações do dispositivo</strong></td>
+                        <td>Versão do Android, modelo do dispositivo, memória disponível (apenas diagnóstico técnico)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contexto do estado da app</strong></td>
+                        <td>Modo de gravação, definições em uso quando a falha ocorreu</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>O que os relatórios de falhas NÃO recolhem:</h3>
+            <ul>
+                <li><strong>Nenhuma informação pessoal</strong> – Sem nomes, e-mails ou identificadores de utilizador</li>
+                <li><strong>Nenhum dado de localização</strong> – Coordenadas GPS nunca são incluídas</li>
+                <li><strong>Nenhum vídeo ou áudio</strong> – As suas gravações permanecem no seu dispositivo</li>
+                <li><strong>Nenhum caminho de ficheiro</strong> – Informações sensíveis são removidas dos registos</li>
+                <li><strong>Nenhum token OAuth ou credencial</strong> – Dados de autenticação nunca são transmitidos</li>
+            </ul>
+
+            <p>Os relatórios de falhas são enviados ao <strong>Firebase Crashlytics</strong> (Google) através de uma conexão encriptada e são usados apenas para melhorar a estabilidade da app. Os relatórios são automaticamente eliminados após 90 dias.</p>
+
+            <div class="alert alert-info">
+                <p><strong>A sua escolha:</strong> Os relatórios de falhas ajudam-nos a corrigir bugs mais rapidamente, mas são completamente opcionais. O DashCam respeita a sua privacidade e funciona perfeitamente com este recurso desativado.</p>
+            </div>
+        </section>
+
+        <hr>
+
         <section id="security">
-            <h2>5. Segurança</h2>
+            <h2>6. Segurança</h2>
             <ul>
                 <li>Todas as credenciais sensíveis (como nomes de utilizador e palavras-passe SMB) são encriptadas e armazenadas de forma segura usando o <a href="https://developer.android.com/privacy-and-security/keystore" target="_blank" rel="noopener noreferrer">Android Keystore</a>.</li>
                 <li>O DashCam nunca armazena ou transmite estas informações para fora do seu dispositivo.</li>
@@ -123,7 +177,7 @@
         <hr>
 
         <section id="retention">
-            <h2>6. Retenção e Eliminação de Dados</h2>
+            <h2>7. Retenção e Eliminação de Dados</h2>
             <ul>
                 <li>Todas as gravações permanecem no seu dispositivo até as eliminar ou ativar a <strong>eliminação automática após upload</strong>.</li>
                 <li>Desinstalar o DashCam remove os seus ficheiros de armazenamento interno, mas não os que guardou noutro local.</li>
@@ -134,7 +188,7 @@
         <hr>
 
         <section id="children">
-            <h2>7. Privacidade de Crianças</h2>
+            <h2>8. Privacidade de Crianças</h2>
             <p>O DashCam não se destina a crianças com menos de 13 anos.<br>
             Não recolhemos nem armazenamos intencionalmente informações de menores.</p>
         </section>
@@ -142,7 +196,7 @@
         <hr>
 
         <section id="permissions">
-            <h2>8. Permissões Explicadas</h2>
+            <h2>9. Permissões Explicadas</h2>
             <p>O DashCam usa estas permissões Android apenas para os seus propósitos técnicos:</p>
 
             <table>
@@ -184,7 +238,7 @@
         <hr>
 
         <section id="updates">
-            <h2>9. Atualizações a esta Política</h2>
+            <h2>10. Atualizações a esta Política</h2>
             <p>Esta Política de Privacidade pode mudar se as funcionalidades do DashCam evoluírem.<br>
             Quando ocorrerem atualizações, a versão revista e a data serão publicadas dentro da app e na nossa página de lançamento oficial.</p>
         </section>
@@ -192,7 +246,7 @@
         <hr>
 
         <section id="contact">
-            <h2>10. Contacto</h2>
+            <h2>11. Contacto</h2>
             <p>Se tiver questões sobre privacidade ou tratamento de dados, contacte:<br>
             📧 <a href="mailto:support@byteforge.biz">support@byteforge.biz</a></p>
         </section>
