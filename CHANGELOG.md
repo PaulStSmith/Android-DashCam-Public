@@ -16,6 +16,10 @@
 
 ## Entries
 
+### Add release notes for DashCam v1.0.0 in multiple languages
+2025-11-04 : Paulo Santos
+* Add release notes for DashCam v1.0.0 in multiple languages
+
 ### Add Portuguese (Brazil) Beta Tester page
 2025-11-03 : Paulo Santos
 * Add initial Portuguese (Brazil) version of the DashCam Beta Tester page
